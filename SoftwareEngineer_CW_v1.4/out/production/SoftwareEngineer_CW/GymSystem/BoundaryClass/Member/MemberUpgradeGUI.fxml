@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Member.MemberUpgradeController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="956.0" layoutY="5.0">
+         <image>
+            <Image url="@../../images/background.jpeg" />
+         </image>
+      </ImageView>
+      <AnchorPane focusTraversable="true" layoutX="-9.0" layoutY="-11.0" prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <AnchorPane layoutX="50.0" layoutY="151.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-opacity: 0.5;">
+               <children>
+                  <Label layoutX="38.0" layoutY="31.0" text="Premier&amp;Platinum members only" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="231.0" text="Upgrade right now! 20%OFF!" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="backToMemberMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#backToMemberMain" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/LIST.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="450.0" prefHeight="60.0" prefWidth="450.0">
+               <children>
+                  <Label fx:id="signOut" layoutX="224.0" layoutY="21.0" onMouseClicked="#signOut" style="-fx-opacity: 1;" text="Sign out">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="96.0" layoutY="21.0" text="Video">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField focusTraversable="false" layoutX="301.0" layoutY="17.0" prefHeight="32.0" prefWidth="130.0" style="-fx-background-radius: 30px;" />
+                  <Label layoutX="172.0" layoutY="21.0" text="Live">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="21.0" text="Home">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="avatar" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/avatar1.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="username" layoutX="110.0" layoutY="60.0" prefHeight="24.0" prefWidth="124.0" text="username">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ProgressBar layoutX="50.0" layoutY="84.0" opacity="0.76" prefHeight="18.0" prefWidth="400.0" progress="0.5">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></ProgressBar>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
