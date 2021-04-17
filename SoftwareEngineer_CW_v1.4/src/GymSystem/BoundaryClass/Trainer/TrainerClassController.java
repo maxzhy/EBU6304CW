@@ -2,12 +2,14 @@ package GymSystem.BoundaryClass.Trainer;
 
 import GymSystem.ControlClass.GymSystemCheck;
 import GymSystem.ControlClass.JumpTo;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
 public class TrainerClassController {
+    @FXML
     public void initialize()throws IOException {
         username.setText(GymSystemCheck.checkAccountInfo(GymSystemCheck.accountNumber,"username"));
     }

@@ -52,7 +52,7 @@ public class SignUpController {
      * @date  2021-04-07
      * @version 1.0
      */
-    public void sighUp() throws IOException {
+    public void signUp() throws IOException {
         boolean accLegal = accIcon.getText().equals("√");
         boolean pswLegal = pswIcon.getText().equals("√");
         boolean usnmLegal = usnmIcon.getText().equals("√");

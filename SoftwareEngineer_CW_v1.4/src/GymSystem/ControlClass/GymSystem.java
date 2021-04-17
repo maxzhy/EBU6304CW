@@ -26,7 +26,7 @@ public interface GymSystem {
      * @version 1.0
      */
      static void addAccountInfo(String accountNum, String password, String username, String phoneNum, String sexual) throws IOException {
-        String fileName = "src\\GymSystem\\Information\\accounts.txt";
+        String fileName = "src/GymSystem/Information/accounts.txt";
         FileWriter fileWriter = new FileWriter(fileName, true);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         String accountInfo = accountNum + '/' + password + '/' + username + '/' + phoneNum + '/' + sexual + "/member";
@@ -52,7 +52,9 @@ public interface GymSystem {
      */
      static boolean logIn(String accountNumInput, String passwordInput) throws IOException {
         boolean isLegal = false;
-        String fileName = "src\\GymSystem\\Information\\accounts.txt";
+        //String fileName =System.getProperty("user.dir");
+        //String fileName = GymSystem.class.getClassLoader().getResource("accounts.txt").toString();
+        String fileName = "src/GymSystem/Information/accounts.txt";
         FileReader fileReader = new FileReader(fileName);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String oneLine="";
@@ -71,5 +73,16 @@ public interface GymSystem {
         return isLegal;
     }
 
+    static void addSchedule(String date, String timePeriod) throws IOException{
+        String fileName = "src/GymSystem/Information/schedule.txt";
+        FileWriter fileWriter = new FileWriter(fileName, true);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        String schedule = GymSystemCheck.accountNumber + '/' + date + '/' + timePeriod;
+        bufferedWriter.write(schedule);
+        bufferedWriter.newLine();
+        bufferedWriter.flush();
+        bufferedWriter.close();
+        fileWriter.close();
+    }
 
 }
