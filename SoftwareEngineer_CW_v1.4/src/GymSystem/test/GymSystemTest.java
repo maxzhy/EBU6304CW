@@ -42,4 +42,11 @@ class GymSystemTest {
             System.out.println(s);
         }
     }
+
+    @Test
+    void changeInfo() throws IOException {
+        GymSystemCheck.setAccountNumber("trainer01");
+        GymSystem.changeInfo("2021-04-18/13:00-14:00","schedule","delete");
+
+    }
 }

@@ -31,9 +31,16 @@ public class TrainerScheduleController {
     public Button add;
     public Button cancel;
     public Button apply;
-    public TextArea orignal;
-    public TextArea present;
+    public TextArea originalAdd;
+    public TextArea presentAdd;
     public Label message;
+    public ListView<String> originalDelete;
+    public ListView<String> toBeDeleted;
+    public ObservableList<String> originalScheDelete = FXCollections.observableArrayList();
+    public ObservableList<String> toBeDeletedSche = FXCollections.observableArrayList();
+    public Button delete;
+    public Button cancelDelete;
+    public Button applyDelete;
     ArrayList<String> originalSche = new ArrayList<String>();
     ArrayList<String> addedSche = new ArrayList<String>();
     ArrayList<String> presentSche = new ArrayList<String>();
@@ -54,10 +61,11 @@ public class TrainerScheduleController {
                 "20:00-21:00",
                 "21:00-22:00"
         ));
+        originalDelete.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         showOriginalSchedule();
     }
 
-    public void addSchedule() throws IOException{
+    public void addSchedule() {
         String addedTime = date.getValue().toString() + " " + (String) timePeriod.getValue();
         if (!presentSche.contains(addedTime)){
             addedSche.add(addedTime);
@@ -69,29 +77,52 @@ public class TrainerScheduleController {
 
     }
 
+    public void deleteSchedule() {
+        toBeDeletedSche.addAll(originalDelete.getSelectionModel().getSelectedItems());
+        originalDelete.getItems().removeAll(originalDelete.getSelectionModel().getSelectedItems());
+        toBeDeleted.setItems(toBeDeletedSche);
+    }
+
+    public void cancelDelete() throws IOException {
+        toBeDeletedSche.clear();
+        showOriginalSchedule();
+    }
+
+    public void applyDelete() throws IOException {
+        for (String s: toBeDeletedSche) {
+            String deleteItem = s.split(" ")[1] + '/' + s.split(" ")[2];
+            GymSystem.changeInfo(deleteItem,"schedule","delete");
+        }
+        showOriginalSchedule();
+        toBeDeletedSche.clear();
+    }
+
     public void showOriginalSchedule() throws IOException{
         originalSche = GymSystemCheck.checkSchedule(GymSystemCheck.accountNumber);
         presentSche = GymSystemCheck.checkSchedule(GymSystemCheck.accountNumber);
-        orignal.setText("");
-        present.setText("");
+        originalAdd.setText("");
+        presentAdd.setText("");
+        originalDelete.getItems().clear();
         for (int i = 0; i<originalSche.size();i++){
-            orignal.appendText(i+1 + ": "+ originalSche.get(i)+"\n");
-            present.appendText(i+1 + ": "+ originalSche.get(i)+"\n");
+            originalAdd.appendText(i+1 + ": "+ originalSche.get(i)+"\n");
+            presentAdd.appendText(i+1 + ": "+ originalSche.get(i)+"\n");
+            originalScheDelete.add(i+1 + ": "+originalSche.get(i));
         }
+        originalDelete.setItems(originalScheDelete);
     }
 
     public void showPresentSchedule(){
-        present.setText("");
+        presentAdd.setText("");
         GymSystemCheck.sortSchedule(presentSche);
         for (int i = 0; i<presentSche.size();i++){
-            present.appendText(i+1 + ": "+ presentSche.get(i)+"\n");
+            presentAdd.appendText(i+1 + ": "+ presentSche.get(i)+"\n");
         }
     }
 
     public void cancelPresentSchedule() throws IOException {
-        present.setText("");
+        presentAdd.setText("");
         for (int i = 0; i<originalSche.size();i++){
-            present.appendText(i+1 + ": "+ originalSche.get(i)+"\n");
+            presentAdd.appendText(i+1 + ": "+ originalSche.get(i)+"\n");
         }
         presentSche = GymSystemCheck.checkSchedule(GymSystemCheck.accountNumber);
         addedSche.clear();

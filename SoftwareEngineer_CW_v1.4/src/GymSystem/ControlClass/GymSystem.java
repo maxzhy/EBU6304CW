@@ -1,6 +1,7 @@
 package GymSystem.ControlClass;
 
 import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Class for GymSystem
@@ -11,6 +12,7 @@ import java.io.*;
  * @version 1.0
  */
 public interface GymSystem {
+
     /**
      * <p>Add account information</p>
      * <p>Add account information from parameters to accounts.txt, write them in one row at a time.
@@ -52,8 +54,6 @@ public interface GymSystem {
      */
      static boolean logIn(String accountNumInput, String passwordInput) throws IOException {
         boolean isLegal = false;
-        //String fileName =System.getProperty("user.dir");
-        //String fileName = GymSystem.class.getClassLoader().getResource("accounts.txt").toString();
         String fileName = "src/GymSystem/Information/accounts.txt";
         FileReader fileReader = new FileReader(fileName);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -85,4 +85,49 @@ public interface GymSystem {
         fileWriter.close();
     }
 
+    static void changeInfo(String itemToBeChanged,String typeOfItem,String mode) throws IOException{
+        String fileName = "";
+        String accountNum;
+        switch (typeOfItem){
+            case "schedule" : {
+                fileName = "src/GymSystem/Information/schedule.txt";
+                break;
+            }
+            default: break;
+        }
+        File oldFile = new File(fileName);
+        File newFile = new File("temp");
+        FileReader fileReader = new FileReader(fileName);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        FileWriter fileWriter = new FileWriter("temp", true);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        String oneLine="";
+        ArrayList<String> newLines = new ArrayList<String>();
+        switch (mode) {
+            case "delete" : {
+                while ((oneLine = bufferedReader.readLine()) != null) {
+                    accountNum = oneLine.split("/")[0];
+                    if (!( accountNum.equals(GymSystemCheck.accountNumber) &&
+                           itemToBeChanged.split("/")[0].equals(oneLine.split("/")[1]) &&
+                           itemToBeChanged.split("/")[1].equals(oneLine.split("/")[2]))){
+                        newLines.add(oneLine);
+                    }
+                }
+                bufferedReader.close();
+                fileReader.close();
+
+                for (String s: newLines){
+                    bufferedWriter.write(s);
+                    bufferedWriter.newLine();
+                }
+                bufferedWriter.close();
+                fileWriter.close();
+
+                oldFile.delete();
+                newFile.renameTo(oldFile);
+            }
+        }
+
+
+    }
 }
