@@ -91,7 +91,7 @@ public class TrainerScheduleController {
     public void applyDelete() throws IOException {
         for (String s: toBeDeletedSche) {
             String deleteItem = s.split(" ")[1] + '/' + s.split(" ")[2];
-            GymSystem.changeInfo(deleteItem,"schedule","delete");
+            GymSystem.changeInfo(deleteItem,"schedule","delete","none");
         }
         showOriginalSchedule();
         toBeDeletedSche.clear();

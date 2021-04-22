@@ -88,7 +88,9 @@ public class LogInController {
             switch (type) {
                 case "admin"  : jump.toManagerMain(logInButton.getScene()); break;
                 case "trainer": jump.toTrainerMain(logInButton.getScene()); break;
-                case "member" : jump.toMemberMain(logInButton.getScene()); break;
+                case "member" :
+                case "premier" :
+                case "platinum" :jump.toMemberMain(logInButton.getScene()); break;
                 default : break;
             }
         } else {

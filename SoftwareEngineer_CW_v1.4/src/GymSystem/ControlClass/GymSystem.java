@@ -85,12 +85,16 @@ public interface GymSystem {
         fileWriter.close();
     }
 
-    static void changeInfo(String itemToBeChanged,String typeOfItem,String mode) throws IOException{
+    static void changeInfo(String itemToBeChanged,String typeOfItem,String mode,String targetValue) throws IOException{
         String fileName = "";
         String accountNum;
         switch (typeOfItem){
             case "schedule" : {
                 fileName = "src/GymSystem/Information/schedule.txt";
+                break;
+            }
+            case "membership" : {
+                fileName = "src/GymSystem/Information/accounts.txt";
                 break;
             }
             default: break;
@@ -125,6 +129,43 @@ public interface GymSystem {
 
                 oldFile.delete();
                 newFile.renameTo(oldFile);
+                break;
+            }
+
+            case "change": {
+                String newContent;
+                String password = "";
+                String username = "";
+                String phoneNum = "";
+                String sexual = "";
+                String type = "";
+                while ((oneLine = bufferedReader.readLine()) != null) {
+                    accountNum = oneLine.split("/")[0];
+                    if (accountNum.equals(GymSystemCheck.accountNumber)){
+                        password = oneLine.split("/")[1];
+                        username = oneLine.split("/")[2];
+                        phoneNum = oneLine.split("/")[3];
+                        sexual = oneLine.split("/")[4];
+                        type = targetValue;
+                        newContent=GymSystemCheck.accountNumber+'/'+password+'/'+username+'/'+phoneNum+'/'+sexual+'/'+type;
+                        newLines.add(newContent);
+                    }else {
+                        newLines.add(oneLine);
+                    }
+                }
+                bufferedReader.close();
+                fileReader.close();
+
+                for (String s: newLines){
+                    bufferedWriter.write(s);
+                    bufferedWriter.newLine();
+                }
+                bufferedWriter.close();
+                fileWriter.close();
+
+                oldFile.delete();
+                newFile.renameTo(oldFile);
+                break;
             }
         }
 

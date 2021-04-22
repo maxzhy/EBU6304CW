@@ -1,3 +1,3 @@
 admin01/111111/admin/12345678912/man/admin
 trainer01/111111/Dio/12345678911/man/trainer
-ecce/111111/ecc/12313213421/woman/member
+ecce/111111/ecc/12313213421/woman/premier
