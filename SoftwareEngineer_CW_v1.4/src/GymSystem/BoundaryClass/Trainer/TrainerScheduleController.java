@@ -67,7 +67,7 @@ public class TrainerScheduleController {
 
     public void addSchedule() {
         String addedTime = date.getValue().toString() + " " + (String) timePeriod.getValue();
-        if (!presentSche.contains(addedTime)){
+        if (!presentSche.contains(addedTime)&&!addedSche.contains(addedTime)){
             addedSche.add(addedTime);
             presentSche.add(addedTime+" (new)");
             showPresentSchedule();

@@ -31,7 +31,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="upgrade" layoutX="96.0" layoutY="288.0" mnemonicParsing="false" onAction="#upgradeToPremier" text="Button" />
+                  <Button fx:id="upToPremier" layoutX="96.0" layoutY="288.0" mnemonicParsing="false" onAction="#upgradeToPremier" text="Button" />
                   <Button fx:id="upToPlatinum" layoutX="270.0" layoutY="288.0" mnemonicParsing="false" onAction="#upgradeToPlatinum" text="Button" />
                </children>
             </AnchorPane>
