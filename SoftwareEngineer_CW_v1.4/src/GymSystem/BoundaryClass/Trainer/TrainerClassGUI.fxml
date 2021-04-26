@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -59,6 +60,11 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
+                        <TextArea fx:id="schedule" editable="false" focusTraversable="false" layoutX="38.0" layoutY="65.0" prefHeight="160.0" prefWidth="354.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextArea>
                      </children>
                   </AnchorPane>
                   <ImageView fx:id="backToTrainerMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#toTrainerMain" pickOnBounds="true" preserveRatio="true">

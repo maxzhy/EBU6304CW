@@ -2,20 +2,33 @@ package GymSystem.BoundaryClass.Trainer;
 
 import GymSystem.ControlClass.GymSystemCheck;
 import GymSystem.ControlClass.JumpTo;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class TrainerClassController {
+    @FXML
     public void initialize()throws IOException {
         username.setText(GymSystemCheck.checkAccountInfo(GymSystemCheck.accountNumber,"username"));
+        showSchedule();
     }
     public JumpTo jump = new JumpTo();
     public Label username;
     public Label signOut;
     public Label toTrainerSchedule;
     public ImageView backToTrainerMain;
+    public TextArea schedule;
+
+    public void showSchedule() throws IOException{
+        ArrayList<String> originalSchedule = GymSystemCheck.checkSchedule(GymSystemCheck.accountNumber);
+        for (int i = 0; i<originalSchedule.size();i++){
+            schedule.appendText(i+1 + ": "+ originalSchedule.get(i)+"\n");
+        }
+    }
 
     public void signOut()throws IOException{
         GymSystemCheck.setAccountNumber(null);

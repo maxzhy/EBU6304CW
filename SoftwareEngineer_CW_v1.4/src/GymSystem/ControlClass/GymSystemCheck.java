@@ -1,8 +1,11 @@
 package GymSystem.ControlClass;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Class for several methods of checking
@@ -104,7 +107,7 @@ public class GymSystemCheck {
      * @version 1.0
      */
     public static String checkAccountInfo(String accountNumInput, String contentOfCheck) throws IOException {
-        String fileName = "src\\GymSystem\\Information\\accounts.txt";
+        String fileName = "src/GymSystem/Information/accounts.txt";
         FileReader fileReader = new FileReader(fileName);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String oneLine;
@@ -145,6 +148,35 @@ public class GymSystemCheck {
             default:
                 return null;
         }
+    }
 
+    public static ArrayList<String> checkSchedule(String acccountNumberInput) throws IOException {
+        String fileName = "src/GymSystem/Information/schedule.txt";
+        FileReader fileReader = new FileReader(fileName);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String oneLine;
+        String accountNum;
+        ArrayList<String> schedules = new ArrayList<String>();
+        while ((oneLine = bufferedReader.readLine()) != null){
+            accountNum = oneLine.split("/")[0];
+            if (acccountNumberInput.equals(accountNum)){
+                schedules.add(oneLine.split("/")[1] + " " + oneLine.split("/")[2]);
+            }
+        }
+        sortSchedule(schedules);
+        bufferedReader.close();
+        fileReader.close();
+        return schedules;
+    }
+
+    public static ArrayList<String> sortSchedule(ArrayList<String> inputSchedule){
+        for (int i = 0; i < inputSchedule.size(); i++) {
+            for (int j = 0; j < inputSchedule.size() - i - 1; j++) {
+                if (inputSchedule.get(j).compareTo(inputSchedule.get(j+1)) > 0 ) {
+                    Collections.swap(inputSchedule, j, j+1);
+                }
+            }
+        }
+        return inputSchedule;
     }
 }
