@@ -21,13 +21,14 @@ public class MemberUpgradeController {
     public ImageView backToMemberMain;
     public Button upToPremier;
     public Button upToPlatinum;
+    public Label message;
 
     public void upgradeToPremier() throws IOException{
         String currentType = GymSystemCheck.checkAccountInfo(GymSystemCheck.accountNumber,"type");
         if (currentType.equals("member")){
             GymSystem.changeInfo(currentType,"membership","change","premier");
         } else {
-            System.out.println("You have already been premier member!\n");
+            message.setText("You have already been Premier Member!");
         }
     }
 
@@ -36,7 +37,7 @@ public class MemberUpgradeController {
         if (currentType.equals("member")||currentType.equals("premier")){
             GymSystem.changeInfo(currentType,"membership","change","platinum");
         } else {
-            System.out.println("You have already been platinum member!\n");
+            message.setText("You have already been Platinum Member!");
         }
     }
 

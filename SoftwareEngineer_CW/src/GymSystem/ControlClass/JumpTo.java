@@ -78,4 +78,11 @@ public class JumpTo {
         presentScene.setRoot(newPage);
         stage.setScene(presentScene);
     }
+
+    public void toMemberInformation(Scene presentScene) throws IOException{
+        Stage stage = (Stage) presentScene.getWindow();
+        Parent newPage = FXMLLoader.load(getClass().getResource("../BoundaryClass/Member/MemberInformationGUI.fxml"));
+        presentScene.setRoot(newPage);
+        stage.setScene(presentScene);
+    }
 }

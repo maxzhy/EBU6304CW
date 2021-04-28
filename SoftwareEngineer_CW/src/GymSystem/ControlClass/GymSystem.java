@@ -93,6 +93,10 @@ public interface GymSystem {
                 fileName = "src/GymSystem/Information/schedule.txt";
                 break;
             }
+            case "username":
+            case "password":
+            case "phoneNum":
+            case "sexual":
             case "membership" : {
                 fileName = "src/GymSystem/Information/accounts.txt";
                 break;
@@ -146,7 +150,14 @@ public interface GymSystem {
                         username = oneLine.split("/")[2];
                         phoneNum = oneLine.split("/")[3];
                         sexual = oneLine.split("/")[4];
-                        type = targetValue;
+                        type = oneLine.split("/")[5];
+                        switch (typeOfItem) {
+                            case "username": username = targetValue; break;
+                            case "password": password = targetValue; break;
+                            case "phoneNum": phoneNum = targetValue; break;
+                            case "sexual"  : sexual = targetValue; break;
+                            case "membership": type = targetValue; break;
+                        }
                         newContent=GymSystemCheck.accountNumber+'/'+password+'/'+username+'/'+phoneNum+'/'+sexual+'/'+type;
                         newLines.add(newContent);
                     }else {

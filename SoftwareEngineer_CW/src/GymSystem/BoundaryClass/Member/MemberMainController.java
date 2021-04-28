@@ -17,6 +17,7 @@ public class MemberMainController {
     public ImageView hideLeftList;
     public Label username;
     public Label toUpgrade;
+    public Label toInformation;
     /**
      * <p>Method to show left navigation bar</p>
      * <p>By setting MouseTransparent and opacity of leftList,
@@ -58,6 +59,10 @@ public class MemberMainController {
 
     public void toUpgrade()throws IOException{
         jump.toUpgrade(username.getScene());
+    }
+
+    public void toInformation() throws IOException{
+        jump.toMemberInformation(username.getScene());
     }
 
     public void signOut()throws IOException {
