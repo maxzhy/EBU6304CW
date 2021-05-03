@@ -53,4 +53,9 @@ class GymSystemTest {
         GymSystemCheck.setAccountNumber("ecce");
         GymSystem.changeInfo(GymSystemCheck.checkAccountInfo(GymSystemCheck.accountNumber,"username"),"username","change","ecc");
     }
+    @Test
+    void operateLiveSession() throws IOException {
+        GymSystemCheck.setAccountNumber("ecce");
+        GymSystem.operateLiveSession("trainer01","2021-05-03","11:00-12:00",GymSystemCheck.accountNumber,"cancel");
+    }
 }

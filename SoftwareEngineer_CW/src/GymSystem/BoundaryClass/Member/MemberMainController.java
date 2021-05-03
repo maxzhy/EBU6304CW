@@ -18,6 +18,8 @@ public class MemberMainController {
     public Label username;
     public Label toUpgrade;
     public Label toInformation;
+    public Label toLive1;
+    public Label toLive2;
     /**
      * <p>Method to show left navigation bar</p>
      * <p>By setting MouseTransparent and opacity of leftList,
@@ -55,6 +57,10 @@ public class MemberMainController {
         leftList.setOpacity(0);
         avatar.setOpacity(0);
         showLeftList.setOpacity(1);
+    }
+
+    public void toLive() throws IOException{
+        jump.toMemberLive(username.getScene());
     }
 
     public void toUpgrade()throws IOException{

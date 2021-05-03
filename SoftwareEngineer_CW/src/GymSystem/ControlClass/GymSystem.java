@@ -77,7 +77,7 @@ public interface GymSystem {
         String fileName = "src/GymSystem/Information/schedule.txt";
         FileWriter fileWriter = new FileWriter(fileName, true);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        String schedule = GymSystemCheck.accountNumber + '/' + date + '/' + timePeriod;
+        String schedule = GymSystemCheck.accountNumber + '/' + date + '/' + timePeriod + '/';
         bufferedWriter.write(schedule);
         bufferedWriter.newLine();
         bufferedWriter.flush();
@@ -179,7 +179,63 @@ public interface GymSystem {
                 break;
             }
         }
+    }
 
+    static void operateLiveSession(String trainerAccInput,String dateInput,String timeInput,String memberAccInput,String mode) throws IOException{
+        String fileName = "src/GymSystem/Information/schedule.txt";
+        File oldFile = new File(fileName);
+        File newFile = new File("temp");
+        FileReader fileReader = new FileReader(fileName);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        FileWriter fileWriter = new FileWriter("temp", true);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        String oneLine="";
+        ArrayList<String> newLines = new ArrayList<String>();
+        String newContent;
+        String trainerAcc = "";
+        String date = "";
+        String time = "";
+        String memberAcc = "";
+        while ((oneLine = bufferedReader.readLine()) != null) {
+            trainerAcc = oneLine.split("/")[0];
+            date = oneLine.split("/")[1];
+            time = oneLine.split("/")[2];
+            if (oneLine.split("/").length == 3){
+                memberAcc="";
+            } else {
+                memberAcc = oneLine.split("/")[3];
+            }
+            switch (mode) {
+                case "book" : {
+                    if (trainerAcc.equals(trainerAccInput) && date.equals(dateInput) && time.equals(timeInput) && memberAcc.equals("")) {
+                        memberAcc = memberAccInput;
+                    }
+                    newContent=trainerAcc+'/'+date+'/'+time+'/'+memberAcc;
+                    newLines.add(newContent);
+                    break;
+                }
+                case "cancel" : {
+                    if (trainerAcc.equals(trainerAccInput) && date.equals(dateInput) && time.equals(timeInput) && memberAcc.equals(memberAccInput)) {
+                        memberAcc = "";
+                    }
+                    newContent=trainerAcc+'/'+date+'/'+time+'/'+memberAcc;
+                    newLines.add(newContent);
+                    break;
+                }
+            }
 
+        }
+        bufferedReader.close();
+        fileReader.close();
+
+        for (String s: newLines){
+            bufferedWriter.write(s);
+            bufferedWriter.newLine();
+        }
+        bufferedWriter.close();
+        fileWriter.close();
+
+        oldFile.delete();
+        newFile.renameTo(oldFile);
     }
 }

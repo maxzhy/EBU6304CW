@@ -160,8 +160,31 @@ public class GymSystemCheck {
         while ((oneLine = bufferedReader.readLine()) != null){
             accountNum = oneLine.split("/")[0];
             if (acccountNumberInput.equals(accountNum)){
-                schedules.add(oneLine.split("/")[1] + " " + oneLine.split("/")[2]);
+                if (oneLine.split("/").length == 3){
+                    schedules.add(oneLine.split("/")[1] + " " + oneLine.split("/")[2] + " Unbooked");
+                } else {
+                    schedules.add(oneLine.split("/")[1] + " " + oneLine.split("/")[2] + " Booked by " + GymSystemCheck.checkAccountInfo(oneLine.split("/")[3],"username"));
+                }
             }
+        }
+        sortSchedule(schedules);
+        bufferedReader.close();
+        fileReader.close();
+        return schedules;
+    }
+
+    public static ArrayList<String> checkAllSchedules() throws IOException{
+        String fileName = "src/GymSystem/Information/schedule.txt";
+        FileReader fileReader = new FileReader(fileName);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String oneLine;
+        ArrayList<String> schedules = new ArrayList<String>();
+        while ((oneLine = bufferedReader.readLine()) != null){
+                if (oneLine.split("/").length == 3){
+                    schedules.add(oneLine.split("/")[0] + " " + oneLine.split("/")[1] + " " + oneLine.split("/")[2] + " Unbooked");
+                } else {
+                    schedules.add(oneLine.split("/")[0] + " " + oneLine.split("/")[1] + " " + oneLine.split("/")[2] + " Booked by " + oneLine.split("/")[3]);
+                }
         }
         sortSchedule(schedules);
         bufferedReader.close();

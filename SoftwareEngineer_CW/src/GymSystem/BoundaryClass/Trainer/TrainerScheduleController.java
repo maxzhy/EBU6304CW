@@ -66,7 +66,7 @@ public class TrainerScheduleController {
     }
 
     public void addSchedule() {
-        String addedTime = date.getValue().toString() + " " + (String) timePeriod.getValue();
+        String addedTime = date.getValue().toString() + " " + (String) timePeriod.getValue() +" Unbooked";
         if (!presentSche.contains(addedTime)&&!addedSche.contains(addedTime)){
             addedSche.add(addedTime);
             presentSche.add(addedTime+" (new)");
