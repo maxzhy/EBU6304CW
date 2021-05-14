@@ -1,5 +1,5 @@
 admin01/111111/admin/12345678912/man/admin
 trainer01/111111/Dio/12345678911/man/trainer
 trainer02/111111/quin/12345678911/man/trainer
-ecce/111111/Ecc/12576711550/woman/premier
+ecce/111111/Ecc/12332112311/man/premier
 jyf/111111/Eccent/12576711550/man/premier

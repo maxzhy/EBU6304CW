@@ -15,6 +15,7 @@ public class TrainerClassController {
     public void initialize()throws IOException {
         username.setText(GymSystemCheck.checkAccountInfo(GymSystemCheck.accountNumber,"username"));
         showSchedule();
+        showStudentInfo();
     }
     public JumpTo jump = new JumpTo();
     public Label username;
@@ -22,11 +23,19 @@ public class TrainerClassController {
     public Label toTrainerSchedule;
     public ImageView backToTrainerMain;
     public TextArea schedule;
+    public TextArea studentInfo;
 
     public void showSchedule() throws IOException{
         ArrayList<String> originalSchedule = GymSystemCheck.checkSchedule(GymSystemCheck.accountNumber);
         for (int i = 0; i<originalSchedule.size();i++){
             schedule.appendText(i+1 + ": "+ originalSchedule.get(i)+"\n");
+        }
+    }
+
+    public void showStudentInfo() throws IOException{
+        ArrayList<String> studentInfoList = GymSystemCheck.checkRequest(GymSystemCheck.accountNumber);
+        for (int i = 0; i<studentInfoList.size();i++){
+            studentInfo.appendText(studentInfoList.get(i));
         }
     }
 

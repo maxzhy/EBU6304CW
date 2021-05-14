@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -15,54 +14,31 @@
          <children>
             <AnchorPane focusTraversable="true" layoutX="-9.0" layoutY="-11.0" prefHeight="600.0" prefWidth="900.0">
                <children>
-                  <AnchorPane layoutX="50.0" layoutY="151.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-opacity: 0.5;">
+                  <AnchorPane layoutX="50.0" layoutY="101.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-opacity: 0.5;">
                      <children>
-                        <Label layoutX="38.0" layoutY="31.0" text="My Schedule" textFill="WHITE">
+                        <Label layoutX="38.0" layoutY="11.0" text="My Schedule" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="38.0" layoutY="231.0" text="Student Information" textFill="WHITE">
+                        <Label layoutX="38.0" layoutY="205.0" text="Student Information" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <AnchorPane layoutX="38.0" layoutY="261.0" prefHeight="114.0" prefWidth="210.0" style="-fx-background-color: gray; -fx-background-radius: 15px;">
-                           <children>
-                              <Label layoutX="75.0" layoutY="14.0" prefHeight="24.0" prefWidth="124.0" text="Username" textFill="WHITE">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="75.0" layoutY="45.0" prefHeight="24.0" prefWidth="124.0" text="balabala" textFill="WHITE">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="299.0" layoutY="261.0" prefHeight="114.0" prefWidth="210.0" style="-fx-background-color: gray; -fx-background-radius: 15px;">
-                           <children>
-                              <Label layoutX="72.0" layoutY="14.0" prefHeight="24.0" prefWidth="124.0" text="Username" textFill="WHITE">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="72.0" layoutY="45.0" prefHeight="24.0" prefWidth="124.0" text="balabala" textFill="WHITE">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                        <Label fx:id="toTrainerSchedule" layoutX="157.0" layoutY="35.0" onMouseClicked="#toTrainerSchedule" text="Detials" textFill="#006bff">
+                        <Label fx:id="toTrainerSchedule" layoutX="157.0" layoutY="15.0" onMouseClicked="#toTrainerSchedule" text="Detials" textFill="#006bff">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="schedule" editable="false" focusTraversable="false" layoutX="38.0" layoutY="65.0" prefHeight="160.0" prefWidth="470.0">
+                        <TextArea fx:id="schedule" editable="false" focusTraversable="false" layoutX="38.0" layoutY="45.0" prefHeight="155.0" prefWidth="722.0">
                            <font>
                               <Font size="16.0" />
+                           </font>
+                        </TextArea>
+                        <TextArea fx:id="studentInfo" editable="false" focusTraversable="false" layoutX="38.0" layoutY="235.0" prefHeight="194.0" prefWidth="722.0">
+                           <font>
+                              <Font size="15.0" />
                            </font>
                         </TextArea>
                      </children>
@@ -107,17 +83,6 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ProgressBar layoutX="50.0" layoutY="84.0" prefHeight="18.0" prefWidth="400.0" progress="0.42" />
-                  <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="96.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/avatar1.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="360.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/avatar1.jpg" />
-                     </image>
-                  </ImageView>
                </children>
             </AnchorPane>
          </children>

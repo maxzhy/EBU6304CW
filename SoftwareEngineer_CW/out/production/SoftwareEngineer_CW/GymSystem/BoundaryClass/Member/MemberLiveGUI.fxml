@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -28,17 +29,36 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="schedules" focusTraversable="false" layoutX="38.0" layoutY="68.0" prefHeight="301.0" prefWidth="594.0" style="-fx-alignment: CENTER;">
+                  <TableView fx:id="schedules" focusTraversable="false" layoutX="38.0" layoutY="68.0" prefHeight="302.0" prefWidth="474.0" style="-fx-alignment: CENTER;">
                     <columns>
-                      <TableColumn fx:id="trainerNameCol" prefWidth="134.4000244140625" text="Trainer" />
-                      <TableColumn fx:id="timeCol" minWidth="8.000030517578125" prefWidth="263.19996643066406" text="Time" />
-                        <TableColumn fx:id="appointmentCol" prefWidth="195.19998779296873" text="Appointment" />
+                      <TableColumn fx:id="trainerNameCol" prefWidth="82.39996337890625" text="Trainer" />
+                      <TableColumn fx:id="timeCol" minWidth="8.000030517578125" prefWidth="211.19996643066406" text="Time" />
+                        <TableColumn fx:id="appointmentCol" prefWidth="179.99997558593748" text="Appointment" />
                     </columns>
                   </TableView>
-                  <Button fx:id="cancel" layoutX="684.0" layoutY="263.0" mnemonicParsing="false" onAction="#cancelBook" prefHeight="23.0" prefWidth="59.0" text="Cancel" />
-                  <Button fx:id="book" layoutX="684.0" layoutY="148.0" mnemonicParsing="false" onAction="#bookLiveSession" prefHeight="23.0" prefWidth="59.0" text="Book" />
-                  <Label fx:id="messageBook" layoutX="652.0" layoutY="184.0" prefHeight="39.0" prefWidth="130.0" text=" " textFill="WHITE" />
-                  <Label fx:id="messageCancel" layoutX="648.0" layoutY="297.0" prefHeight="39.0" prefWidth="130.0" text=" " textFill="WHITE" />
+                  <Button fx:id="cancel" layoutX="527.0" layoutY="346.0" mnemonicParsing="false" onAction="#cancelBook" prefHeight="23.0" prefWidth="91.0" text="Cancel Book" />
+                  <Button fx:id="book" layoutX="527.0" layoutY="305.0" mnemonicParsing="false" onAction="#bookLiveSession" prefHeight="23.0" prefWidth="59.0" text="Book" />
+                  <Label fx:id="messageBook" layoutX="624.0" layoutY="303.0" prefHeight="39.0" prefWidth="130.0" text=" " textFill="WHITE" />
+                  <Label fx:id="messageCancel" layoutX="625.0" layoutY="338.0" prefHeight="39.0" prefWidth="130.0" text=" " textFill="WHITE" />
+                  <TextArea fx:id="ability" layoutX="622.0" layoutY="150.0" prefHeight="68.0" prefWidth="154.0" />
+                  <Label fx:id="messageTarget" layoutX="527.0" layoutY="61.0" prefHeight="32.0" prefWidth="91.0" text="Your targets" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="target" layoutX="623.0" layoutY="66.0" prefHeight="68.0" prefWidth="154.0" />
+                  <Label fx:id="messageAbility1" layoutX="523.0" layoutY="142.0" prefHeight="32.0" prefWidth="114.0" text="Your physical" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="messageAbility2" layoutX="523.0" layoutY="167.0" prefHeight="32.0" prefWidth="114.0" text="abilities" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="submit" layoutX="672.0" layoutY="226.0" mnemonicParsing="false" onAction="#submitRequest" text="Submit" />
+                  <Label fx:id="messageRequest" layoutX="619.0" layoutY="249.0" prefHeight="50.0" prefWidth="178.0" textFill="WHITE" />
                </children>
             </AnchorPane>
             <ImageView fx:id="backToMemberMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#backToMemberMain" pickOnBounds="true" preserveRatio="true">

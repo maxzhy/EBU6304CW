@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -21,8 +22,15 @@ public class MemberLiveController {
     public ImageView backToMemberMain;
     public Button book;
     public Button cancel;
+    public Button submit;
     public Label messageBook;
     public Label messageCancel;
+    public Label messageTarget;
+    public Label messageAbility1;
+    public Label messageAbility2;
+    public Label messageRequest;
+    public TextArea target;
+    public TextArea ability;
     public boolean isNormal = true;
     public TableView<scheduleInfo> schedules;
     public TableColumn<String, scheduleInfo> trainerNameCol;
@@ -39,9 +47,31 @@ public class MemberLiveController {
             schedules.setDisable(true);
             book.setDisable(true);
             cancel.setDisable(true);
+            messageTarget.setDisable(true);
+            messageAbility1.setDisable(true);
+            messageAbility2.setDisable(true);
+            target.setDisable(true);
+            ability.setDisable(true);
         } else {
             getSchedules();
+            messageRequest.setText("click to submit your\ninformation to the trainer\nyou like");
         }
+    }
+
+    public void submitRequest() throws IOException{
+        if (schedules.getSelectionModel().getSelectedItems().isEmpty()){
+            messageRequest.setText("Please select a trainer by\nselecting a live session");
+            return;
+        }
+        scheduleInfo selected = schedules.getSelectionModel().getSelectedItems().get(0);
+        String trainerAccount = selected.getTrainerAcc();
+        if(target.getText().isEmpty() || ability.getText().isEmpty()){
+            messageRequest.setText("Please type in your request.");
+            return;
+        }
+        GymSystem.addRequest(trainerAccount,GymSystemCheck.accountNumber,target.getText(),ability.getText());
+        messageRequest.setText("Request submitted");
+
     }
 
     public void bookLiveSession() throws IOException{
@@ -64,6 +94,7 @@ public class MemberLiveController {
             return;
         }
         GymSystem.operateLiveSession(trainerAccount,date,time,GymSystemCheck.accountNumber,"book");
+
         messageBook.setText("Live session booked.");
         getSchedules();
     }
@@ -88,6 +119,7 @@ public class MemberLiveController {
             return;
         }
         GymSystem.operateLiveSession(trainerAccount,date,time,GymSystemCheck.accountNumber,"cancel");
+        //GymSystem.deleteRequest(trainerAccount,GymSystemCheck.accountNumber);
         messageCancel.setText("Successfully canceled.");
         getSchedules();
     }

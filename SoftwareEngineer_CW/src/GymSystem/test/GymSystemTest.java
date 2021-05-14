@@ -58,4 +58,12 @@ class GymSystemTest {
         GymSystemCheck.setAccountNumber("ecce");
         GymSystem.operateLiveSession("trainer01","2021-05-03","11:00-12:00",GymSystemCheck.accountNumber,"cancel");
     }
+    @Test
+    void deleteRequest() throws IOException{
+        //GymSystem.deleteRequest("trainer01","ecce");
+    }
+    @Test
+    void addRequest() throws IOException{
+        GymSystem.addRequest("trainer01","ecce","I want to be thinner","I'm good at running");
+    }
 }

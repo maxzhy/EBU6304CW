@@ -202,4 +202,54 @@ public class GymSystemCheck {
         }
         return inputSchedule;
     }
+
+    public static ArrayList<String> checkRequest(String trainerAccInput) throws IOException{
+        String fileName = "src/GymSystem/Information/requests.txt";
+        FileReader fileReader = new FileReader(fileName);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String oneLine;
+        String trainerAcc;
+        StringBuilder requestContent;
+        class record {
+            final String account;
+            final String target;
+            final String ability;
+            record(String account, String target, String ability) {
+                this.account = account;
+                this.target = target;
+                this.ability = ability;
+            }
+        }
+        ArrayList<String> request = new ArrayList<String>();
+        ArrayList<String> studentAccList = new ArrayList<String>();
+        ArrayList<record> recordList = new ArrayList<record>();
+        while ((oneLine = bufferedReader.readLine()) != null){
+            trainerAcc = oneLine.split("/")[0];
+            if (trainerAccInput.equals(trainerAcc)){
+                if (!studentAccList.contains(oneLine.split("/")[1])){
+                    studentAccList.add(oneLine.split("/")[1]);
+                }
+                recordList.add(new record(oneLine.split("/")[1],oneLine.split("/")[2],oneLine.split("/")[3]));
+            }
+        }
+        for (String s : studentAccList) {
+            requestContent = new StringBuilder("Student:\n" + "      " + GymSystemCheck.checkAccountInfo(s,"username") + "\n" + "Targets:\n");
+            for (record record : recordList) {
+                if (record.account.equals(s)) {
+                    requestContent.append("     ").append(record.target).append("\n");
+                }
+            }
+            requestContent.append("Physical Abilities:\n");
+            for (record record : recordList) {
+                if (record.account.equals(s)) {
+                    requestContent.append("     ").append(record.ability).append("\n");
+                }
+            }
+            requestContent.append("————————————————————————\n");
+            request.add(requestContent.toString());
+        }
+        bufferedReader.close();
+        fileReader.close();
+        return request;
+    }
 }

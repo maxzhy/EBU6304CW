@@ -238,4 +238,63 @@ public interface GymSystem {
         oldFile.delete();
         newFile.renameTo(oldFile);
     }
+
+    static void addRequest(String trainerAccInput, String studentAccInput, String targetInput, String abilityInput) throws IOException{
+        String fileName = "src/GymSystem/Information/requests.txt";
+        FileWriter fileWriter = new FileWriter(fileName, true);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        String request = trainerAccInput + '/' + studentAccInput + '/' + targetInput + '/' + abilityInput;
+        bufferedWriter.write(request);
+        bufferedWriter.newLine();
+        bufferedWriter.flush();
+        bufferedWriter.close();
+        fileWriter.close();
+    }
+
+//    static void deleteRequest(String trainerAccInput, String studentAccInput)throws IOException{
+//        String fileName = "src/GymSystem/Information/requests.txt";
+//        File oldFile = new File(fileName);
+//        File newFile = new File("temp");
+//        FileReader fileReader = new FileReader(fileName);
+//        BufferedReader bufferedReader = new BufferedReader(fileReader);
+//        FileWriter fileWriter = new FileWriter("temp", true);
+//        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//        String oneLine="";
+//        ArrayList<String> newLines = new ArrayList<String>();
+//        String newContent;
+//        String trainerAcc = "";
+//        String studentAcc = "";
+//        String target = "";
+//        String ability = "";
+//        while ((oneLine = bufferedReader.readLine()) != null) {
+//            trainerAcc = oneLine.split("/")[0];
+//            studentAcc = oneLine.split("/")[1];
+//            target = oneLine.split("/")[2];
+//            ability = oneLine.split("/")[3];
+//
+//            if (trainerAcc.equals(trainerAccInput) && studentAcc.equals(studentAccInput) ) {
+//                newContent = "";
+//            } else {
+//                newContent=trainerAcc+'/'+studentAcc+'/'+target+'/'+ability;
+//            }
+//            newLines.add(newContent);
+//
+//            bufferedReader.close();
+//            fileReader.close();
+//            for (String s: newLines){
+//                bufferedWriter.write(s);
+//                bufferedWriter.newLine();
+//            }
+//            bufferedWriter.close();
+//            fileWriter.close();
+//
+//            oldFile.delete();
+//            newFile.renameTo(oldFile);
+//            break;
+//
+//        }
+//
+//
+//
+//    }
 }
