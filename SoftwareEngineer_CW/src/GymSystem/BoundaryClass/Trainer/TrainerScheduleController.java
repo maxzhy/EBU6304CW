@@ -6,18 +6,8 @@ import GymSystem.ControlClass.JumpTo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Region;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
-import javafx.scene.text.TextFlow;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -41,6 +31,9 @@ public class TrainerScheduleController {
     public Button delete;
     public Button cancelDelete;
     public Button applyDelete;
+    public Label home;
+    public Label video;
+    public Label live;
     ArrayList<String> originalSche = new ArrayList<String>();
     ArrayList<String> addedSche = new ArrayList<String>();
     ArrayList<String> presentSche = new ArrayList<String>();
@@ -148,5 +141,8 @@ public class TrainerScheduleController {
         jump.toTrainerClass(signOut.getScene());
     }
 
+    public void toTrainerMain() throws IOException{
+        jump.toTrainerMain(signOut.getScene());
+    }
 
 }

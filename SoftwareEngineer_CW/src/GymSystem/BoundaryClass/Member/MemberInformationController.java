@@ -4,14 +4,19 @@ import GymSystem.ControlClass.GymSystem;
 import GymSystem.ControlClass.GymSystemCheck;
 import GymSystem.ControlClass.JumpTo;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
-
-import javax.swing.*;
 import java.io.IOException;
 
+/**
+ * class used in member's change information page
+ * <p>class used in member's change information page, user can change personal information here</p>
+ * @author Yongfan Jin
+ * @since 1.0
+ * @version 1.0
+ */
 public class MemberInformationController {
     public JumpTo jump = new JumpTo();
     public Label signOut;
@@ -40,12 +45,30 @@ public class MemberInformationController {
     public Label usnmIcon;
     public Label pswdIcon;
     public Label phnmIcon;
+    public Label home;
+    public Label video;
+    public Label live;
 
+    /**
+     * <p>initialize the page</p>
+     * <p>call {@link #getCurrentInfo()} to show personal information
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     @FXML
     public void initialize() throws IOException{
         getCurrentInfo();
     }
 
+    /**
+     * <p>confirm the changes made by user</p>
+     * <p>judge the legality of information typed in by user, if legal, call {@link GymSystem#changeInfo(String, String, String, String)}
+     * to change the information, if illegal, don't change.
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void applyChange() throws IOException{
         boolean pswLegal = pswdIcon.getText().equals("√") || pswdIcon.getText().equals("");
         boolean usnmLegal = usnmIcon.getText().equals("√") || usnmIcon.getText().equals("");
@@ -97,7 +120,14 @@ public class MemberInformationController {
         editSexualWomen.setSelected(false);
     }
 
-
+    /**
+     * <p>get the current personal information</p>
+     * <p> call {@link GymSystemCheck#checkAccountInfo(String, String)} to get username, phone number, membership, sexual
+     * and show them in {@code Label}s
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void getCurrentInfo() throws IOException{
         username.setText(GymSystemCheck.checkAccountInfo(GymSystemCheck.accountNumber,"username"));
         password.setText("******");
@@ -110,6 +140,17 @@ public class MemberInformationController {
         }
     }
 
+    /**
+     * <p>check the legality of username</p>
+     * <p>By calling {@code checkUsername()} method in {@code GymSystemCheck} class
+     * {@link GymSystemCheck#checkUsername(String)} to decide whether
+     * it is legal, if so, show a green "√", if not, show a red "X"
+     * </p>
+     * @param
+     * @return
+     * @author
+     * @version
+     */
     public void checkUsername() {
         if(GymSystemCheck.checkUsername(editUsername.getText())) {
             usnmIcon.setText("√");
@@ -123,6 +164,15 @@ public class MemberInformationController {
         }
     }
 
+    /**
+     * <p>Check if password user typed in is legal</p>
+     * <p> By calling {@code checkPassword()} method in {@code GymSystemCheck} class
+     *      {@link GymSystemCheck#checkPassword(String)} to decide whether
+     *      it is legal, if so, show a green "√", if not, show a red "X"
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void checkPassword() {
         if(GymSystemCheck.checkPassword(editPassword.getText())){
             pswdIcon.setText("√");
@@ -136,6 +186,15 @@ public class MemberInformationController {
         }
     }
 
+    /**
+     * <p>Check if phone number user typed in is legal</p>
+     * <p> By calling {@code checkPhoneNum()} method in {@code GymSystemCheck} class
+     *      {@link GymSystemCheck#checkPhoneNum(String)} to decide whether
+     *      it is legal, if so, show a green "√", if not, show a red "X"
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void checkPhoneNum() {
         if(GymSystemCheck.checkPhoneNum(editPhoneNum.getText())){
             phnmIcon.setText("√");
@@ -154,9 +213,7 @@ public class MemberInformationController {
      * <p>Ensure that user only choose one of the two choices:
      *      man or woman. They can't neither choose both nor choose nothing.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void selectSexMan() {
@@ -177,9 +234,7 @@ public class MemberInformationController {
      * <p>Ensure that user only choose one of the two choices:
      * man or woman. They can't neither choose both nor choose nothing.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void selectSexWoman() {
@@ -195,9 +250,14 @@ public class MemberInformationController {
         isWoman = editSexualWomen.isSelected();
     }
 
-
-
-
+    /**
+     * <p>show or hide the elements</p>
+     * <p>when click the edit button, show the elements related to changing information if they are not shown, or hide
+     * them if they are already shown
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void toggleEditInterface() {
         editUsername.setText("");
         editPassword.setText("");
@@ -228,14 +288,46 @@ public class MemberInformationController {
         visiable =!visiable;
     }
 
+    /**
+     * <p>jump to member's main page</p>
+     * <p>Call {@link JumpTo#toMemberMain(Scene)} method in {@code JumptTo} class to jump to member's main page
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void toMemberMain() throws IOException{
         jump.toMemberMain(username.getScene());
     }
 
+    /**
+     * <p>jump to member's upgrade page</p>
+     * <p>Call {@link JumpTo#toUpgrade(Scene)} method in {@code JumptTo} class to jump to member's upgrade page
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void toMemberUpgrade() throws IOException{
         jump.toUpgrade(username.getScene());
     }
 
+    /**
+     * <p>jump to member's live page</p>
+     * <p>Call {@link JumpTo#toMemberLive(Scene)} method in {@code JumptTo} class to jump to member's live page
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
+    public void toMemberLive() throws IOException{
+        jump.toMemberLive(username.getScene());
+    }
+
+    /**
+     * <p>jump to home page</p>
+     * <p>Call {@link JumpTo#toMain(Scene)} method in {@code JumptTo} class to jump to home page, and sign out.
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void signOut()throws IOException {
         GymSystemCheck.setAccountNumber(null);
         GymSystemCheck.setLogInState("not");

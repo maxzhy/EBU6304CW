@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Member.MemberUpgradeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Manager.ManagerFundController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="956.0" layoutY="5.0">
          <image>
@@ -19,21 +17,31 @@
       </ImageView>
       <AnchorPane focusTraversable="true" layoutX="-9.0" layoutY="-11.0" prefHeight="600.0" prefWidth="900.0">
          <children>
-            <AnchorPane layoutX="50.0" layoutY="151.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-opacity: 0.5;">
+            <AnchorPane layoutX="50.0" layoutY="110.0" prefHeight="441.0" prefWidth="800.0" style="-fx-background-color: rgba(0,0,0,0.5);">
                <children>
-                  <Label layoutX="38.0" layoutY="31.0" text="Premier&amp;Platinum members only" textFill="WHITE">
+                  <TextArea fx:id="incomePane" editable="false" focusTraversable="false" layoutX="32.0" layoutY="57.0" prefHeight="326.0" prefWidth="569.0" wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="269.0" layoutY="14.0" text="INCOMES" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="646.0" layoutY="18.0" text="Total Income" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="38.0" layoutY="231.0" text="Upgrade right now! 20%OFF!" textFill="WHITE">
+                  <Label fx:id="totalIncome" layoutX="668.0" layoutY="75.0" prefHeight="24.0" prefWidth="113.0" textFill="WHITE">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="20.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <ImageView fx:id="backToMemberMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#backToMemberMain" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="backToManagerMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#toManagerMain" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/LIST.png" />
                </image>
@@ -51,12 +59,12 @@
                      </font>
                   </Label>
                   <TextField focusTraversable="false" layoutX="301.0" layoutY="17.0" prefHeight="32.0" prefWidth="130.0" style="-fx-background-radius: 30px;" />
-                  <Label fx:id="live" layoutX="172.0" layoutY="21.0" onMouseClicked="#toMemberLive" text="Live">
+                  <Label fx:id="live" layoutX="172.0" layoutY="21.0" text="Live">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="home" layoutX="21.0" layoutY="21.0" onMouseClicked="#backToMemberMain" text="Home">
+                  <Label fx:id="home" layoutX="21.0" layoutY="21.0" onMouseClicked="#toManagerMain" text="Home">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -73,28 +81,6 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ProgressBar layoutX="50.0" layoutY="84.0" opacity="0.76" prefHeight="18.0" prefWidth="400.0" progress="0.5">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets></ProgressBar>
-            <AnchorPane layoutX="100.0" layoutY="210.0" prefHeight="166.0" prefWidth="287.0" style="-fx-background-color: white;">
-               <children>
-                  <Label layoutX="36.0" layoutY="71.0" text="一些直播课，静态，展示用">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="450.0" layoutY="210.0" prefHeight="166.0" prefWidth="287.0" style="-fx-background-color: white;">
-               <children>
-                  <Label layoutX="36.0" layoutY="71.0" text="一些直播课，静态，展示用">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
             <Label fx:id="message" layoutX="361.0" layoutY="385.0" text=" " textFill="WHITE">
                <font>
                   <Font size="18.0" />
@@ -102,7 +88,5 @@
             </Label>
          </children>
       </AnchorPane>
-      <Button fx:id="upToPremier" layoutX="100.0" layoutY="430.0" mnemonicParsing="false" onAction="#upgradeToPremier" prefHeight="23.0" prefWidth="173.0" text="Become Premier Member!" />
-      <Button fx:id="upToPlatinum" layoutX="100.0" layoutY="480.0" mnemonicParsing="false" onAction="#upgradeToPlatinum" text="Become Platinum Member!" />
    </children>
 </AnchorPane>

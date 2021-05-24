@@ -64,11 +64,6 @@
             </ImageView>
             <AnchorPane fx:id="leftList" mouseTransparent="true" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: black; -fx-opacity: 0;">
                <children>
-                  <Label layoutX="21.0" layoutY="133.0" text="My Course" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
                   <Label fx:id="username" layoutX="87.0" layoutY="77.0" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
@@ -79,12 +74,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="21.0" layoutY="219.0" text="Membership" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="toClass" layoutX="21.0" layoutY="259.0" onMouseClicked="#toClass" text="My Class " textFill="WHITE">
+                  <Label fx:id="toClass" layoutX="21.0" layoutY="133.0" onMouseClicked="#toClass" text="My Class " textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>

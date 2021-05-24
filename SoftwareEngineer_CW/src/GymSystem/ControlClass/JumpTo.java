@@ -92,4 +92,18 @@ public class JumpTo {
         presentScene.setRoot(newPage);
         stage.setScene(presentScene);
     }
+
+    public void toManagerFund(Scene presentScene) throws IOException{
+        Stage stage = (Stage) presentScene.getWindow();
+        Parent newPage = FXMLLoader.load(getClass().getResource("../BoundaryClass/Manager/ManagerFundGUI.fxml"));
+        presentScene.setRoot(newPage);
+        stage.setScene(presentScene);
+    }
+
+    public void toManagerAccount(Scene presentScene) throws IOException{
+        Stage stage = (Stage) presentScene.getWindow();
+        Parent newPage = FXMLLoader.load(getClass().getResource("../BoundaryClass/Manager/ManagerAccountGUI.fxml"));
+        presentScene.setRoot(newPage);
+        stage.setScene(presentScene);
+    }
 }

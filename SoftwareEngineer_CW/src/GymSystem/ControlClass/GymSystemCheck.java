@@ -1,7 +1,9 @@
 package GymSystem.ControlClass;
 
+import GymSystem.EntityClass.Income;
+import GymSystem.EntityClass.NumberOfAccount;
+
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,8 +12,7 @@ import java.util.Collections;
 /**
  * Class for several methods of checking
  * <p>Class for several static method, aim to check something or return some information</p>
- * @author
- * @date 2021-04-07
+ * @author Yongfan Jin
  * @since 1.0
  * @version 1.0
  */
@@ -30,7 +31,6 @@ public class GymSystemCheck {
      * @param input str user's input of account number
      * @return if user's input is legal
      * @author Yongfan Jin
-     * @date 2020-04-07
      * @version 1.0
      */
     public static boolean checkAccountNum(String input) {
@@ -47,7 +47,6 @@ public class GymSystemCheck {
      * @param input str user's input of password
      * @return if user's input is legal
      * @author Yongfan Jin
-     * @date 2020-04-07
      * @version 1.0
      */
     public static boolean checkPassword(String input) {
@@ -65,7 +64,6 @@ public class GymSystemCheck {
      * @param input str user's input of username
      * @return if user's input is legal
      * @author Yongfan Jin
-     * @date 2020-04-07
      * @version 1.0
      */
     public static boolean checkUsername(String input) {
@@ -83,7 +81,6 @@ public class GymSystemCheck {
      * @param input str user's input of phone number
      * @return if user's input is legal
      * @author Yongfan Jin
-     * @date 2020-04-07
      * @version 1.0
      */
     public static boolean checkPhoneNum(String input) {
@@ -103,7 +100,7 @@ public class GymSystemCheck {
      *                       can choose from "accountNum","password","username","phoneNum","sexual"
      * @return the information which is supposed to be returned
      * @author Yongfan Jin
-     * @date 2021-04-07
+     * @throws IOException
      * @version 1.0
      */
     public static String checkAccountInfo(String accountNumInput, String contentOfCheck) throws IOException {
@@ -251,5 +248,38 @@ public class GymSystemCheck {
         bufferedReader.close();
         fileReader.close();
         return request;
+    }
+
+    public static ArrayList<Income> checkIncome() throws IOException{
+        String fileName = "src/GymSystem/Information/income.txt";
+        FileReader fileReader = new FileReader(fileName);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String oneLine;
+        ArrayList<Income> incomes = new ArrayList<Income>();
+        while ((oneLine = bufferedReader.readLine()) != null){
+            incomes.add(new Income(oneLine.split("/")[0],oneLine.split("/")[1],oneLine.split("/")[2]));
+        }
+        bufferedReader.close();
+        fileReader.close();
+        return incomes;
+    }
+
+    public static NumberOfAccount checkNumberOfAcc() throws IOException{
+        String fileName = "src/GymSystem/Information/accounts.txt";
+        FileReader fileReader = new FileReader(fileName);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String oneLine;
+        NumberOfAccount num = new NumberOfAccount();
+        while ((oneLine = bufferedReader.readLine()) != null){
+            switch (oneLine.split("/")[5]) {
+                case "member" : num.setNumOfMember(num.getNumOfMember()+1); break;
+                case "premier" : num.setNumOfPremier(num.getNumOfPremier()+1); break;
+                case "platinum" : num.setNumOfPlatinum(num.getNumOfPlatinum()+1); break;
+                case "trainer" : num.setNumOfTrainer(num.getNumOfTrainer()+1); break;
+            }
+        }
+        bufferedReader.close();
+        fileReader.close();
+        return num;
     }
 }

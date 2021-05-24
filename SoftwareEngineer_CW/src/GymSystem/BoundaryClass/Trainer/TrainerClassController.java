@@ -24,6 +24,9 @@ public class TrainerClassController {
     public ImageView backToTrainerMain;
     public TextArea schedule;
     public TextArea studentInfo;
+    public Label home;
+    public Label video;
+    public Label live;
 
     public void showSchedule() throws IOException{
         ArrayList<String> originalSchedule = GymSystemCheck.checkSchedule(GymSystemCheck.accountNumber);
@@ -52,4 +55,5 @@ public class TrainerClassController {
     public void toTrainerSchedule() throws IOException{
         jump.toTrainerSchedule(signOut.getScene());
     }
+
 }

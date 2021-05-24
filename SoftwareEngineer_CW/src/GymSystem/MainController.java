@@ -14,8 +14,7 @@ import javafx.stage.Stage;
 /**
  * Class for main page
  * <p>Class for main page, including......</p>
- * @author
- * @date 2021-04-07
+ * @author Yongfan Jin
  * @since 1.0
  * @version 1.0
  */
@@ -37,9 +36,7 @@ public class MainController {
      *    totally opaque, while left navigation bar should be partially
      *    transparent.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void showLeftList() {
@@ -56,9 +53,7 @@ public class MainController {
      *      to hide the left navigation bar together with avatar
      *      and make them non-clickable.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void hideLeftList() {
@@ -72,9 +67,8 @@ public class MainController {
      * <p>Jump to log in page</p>
      * <p>By changing the scene configuration to change the page
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
+     * @throws Exception
      * @version 1.0
      */
     public void jumpToLogIn() throws Exception {

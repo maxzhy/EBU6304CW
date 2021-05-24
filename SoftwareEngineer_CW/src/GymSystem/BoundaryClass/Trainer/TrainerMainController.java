@@ -26,9 +26,7 @@ public class TrainerMainController {
      *    totally opaque, while left navigation bar should be partially
      *    transparent.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void showLeftList() throws IOException {
@@ -45,9 +43,7 @@ public class TrainerMainController {
      *      to hide the left navigation bar together with avatar
      *      and make them non-clickable.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void hideLeftList() {

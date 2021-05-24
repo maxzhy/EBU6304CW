@@ -6,8 +6,7 @@ import java.util.ArrayList;
 /**
  * Class for GymSystem
  * <p>The Control class, including ......</p>
- * @author
- * @date 2021-04-07
+ * @author Yongfan Jin
  * @since 1.0
  * @version 1.0
  */
@@ -22,9 +21,8 @@ public interface GymSystem {
      * @param username str username
      * @param phoneNum str phone number
      * @param sexual str sexual
-     * @return none
+     * @throws IOException
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
      static void addAccountInfo(String accountNum, String password, String username, String phoneNum, String sexual) throws IOException {
@@ -49,7 +47,7 @@ public interface GymSystem {
      * @param passwordInput str password user typed in
      * @return whether log in is successful
      * @author Yongfan Jin
-     * @date 2021-04-07
+     * @throws IOException
      * @version 1.0
      */
      static boolean logIn(String accountNumInput, String passwordInput) throws IOException {
@@ -251,50 +249,15 @@ public interface GymSystem {
         fileWriter.close();
     }
 
-//    static void deleteRequest(String trainerAccInput, String studentAccInput)throws IOException{
-//        String fileName = "src/GymSystem/Information/requests.txt";
-//        File oldFile = new File(fileName);
-//        File newFile = new File("temp");
-//        FileReader fileReader = new FileReader(fileName);
-//        BufferedReader bufferedReader = new BufferedReader(fileReader);
-//        FileWriter fileWriter = new FileWriter("temp", true);
-//        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-//        String oneLine="";
-//        ArrayList<String> newLines = new ArrayList<String>();
-//        String newContent;
-//        String trainerAcc = "";
-//        String studentAcc = "";
-//        String target = "";
-//        String ability = "";
-//        while ((oneLine = bufferedReader.readLine()) != null) {
-//            trainerAcc = oneLine.split("/")[0];
-//            studentAcc = oneLine.split("/")[1];
-//            target = oneLine.split("/")[2];
-//            ability = oneLine.split("/")[3];
-//
-//            if (trainerAcc.equals(trainerAccInput) && studentAcc.equals(studentAccInput) ) {
-//                newContent = "";
-//            } else {
-//                newContent=trainerAcc+'/'+studentAcc+'/'+target+'/'+ability;
-//            }
-//            newLines.add(newContent);
-//
-//            bufferedReader.close();
-//            fileReader.close();
-//            for (String s: newLines){
-//                bufferedWriter.write(s);
-//                bufferedWriter.newLine();
-//            }
-//            bufferedWriter.close();
-//            fileWriter.close();
-//
-//            oldFile.delete();
-//            newFile.renameTo(oldFile);
-//            break;
-//
-//        }
-//
-//
-//
-//    }
+    static void addIncome(String amount, String accNumInput, String state) throws IOException{
+        String fileName = "src/GymSystem/Information/income.txt";
+        FileWriter fileWriter = new FileWriter(fileName, true);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        String request = accNumInput + '/' + amount + '/' + state;
+        bufferedWriter.write(request);
+        bufferedWriter.newLine();
+        bufferedWriter.flush();
+        bufferedWriter.close();
+        fileWriter.close();
+    }
 }

@@ -14,9 +14,8 @@ import java.io.IOException;
 
 /**
  * Class for sign up page
- * <p>Class for sign up page, including ......</p>
- * @author
- * @date 2021-04-07
+ * <p>Class for sign up page, including sign up and some checks for legality of users' input</p>
+ * @author Yongfan Jin
  * @since 1.0
  * @version 1.0
  */
@@ -47,9 +46,8 @@ public class SignUpController {
      *      to add account information into accounts.txt. 3. Call {@code initialize()}{@link #initialize()} method to
      *      initialize components.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date  2021-04-07
+     * @throws IOException
      * @version 1.0
      */
     public void signUp() throws IOException {
@@ -85,9 +83,8 @@ public class SignUpController {
      *      if the account number is repeated, if also no, show a green "√". If any one
      *      of the conditions is not satisfied, show a red "X"
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
+     * @throws IOException
      * @version 1.0
      */
     public void checkAndShowAccNum() throws IOException{
@@ -116,9 +113,7 @@ public class SignUpController {
      *      {@link GymSystemCheck#checkPassword(String)} to decide whether
      *      it is legal, if so, show a green "√", if not, show a red "X"
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void checkAndShowPsw() {
@@ -140,9 +135,7 @@ public class SignUpController {
      *      {@link GymSystemCheck#checkUsername(String)} to decide whether
      *      it is legal, if so, show a green "√", if not, show a red "X"
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void checkAndShowUsnm() {
@@ -164,9 +157,7 @@ public class SignUpController {
      *      {@link GymSystemCheck#checkPhoneNum(String)} to decide whether
      *      it is legal, if so, show a green "√", if not, show a red "X"
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void checkAndShowPhnm() {
@@ -187,9 +178,7 @@ public class SignUpController {
      * <p>Ensure that user only choose one of the two choices:
      *      man or woman. They can't neither choose both nor choose nothing.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void selectSexMan() {
@@ -212,9 +201,7 @@ public class SignUpController {
      * <p>Ensure that user only choose one of the two choices:
      * man or woman. They can't neither choose both nor choose nothing.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void selectSexWoman() {
@@ -237,9 +224,7 @@ public class SignUpController {
      * <p>Initialize the components in sign up page.
      *
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2020-04-07
      * @version 1.0
      */
     public void initialize() {
@@ -265,9 +250,7 @@ public class SignUpController {
      * <p>Back to log in page</p>
      * <p>By changing the scene configuration to change the page
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void backToLogIn() throws Exception {

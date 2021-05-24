@@ -2,12 +2,19 @@ package GymSystem.BoundaryClass.Manager;
 
 import GymSystem.ControlClass.GymSystemCheck;
 import GymSystem.ControlClass.JumpTo;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-
 import java.io.IOException;
 
+/**
+ * class used in manager's main page
+ * <p>Class for manager's main page.</p>
+ * @author Yongfan Jin
+ * @since 1.0
+ * @version 1.0
+ */
 public class ManagerMainController {
     public JumpTo jump = new JumpTo();
     public Label signOut;
@@ -15,6 +22,8 @@ public class ManagerMainController {
     public AnchorPane leftList;
     public ImageView avatar;
     public ImageView hideLeftList;
+    public Label toFund;
+    public Label toAccount;
 
     /**
      * <p>Method to show left navigation bar</p>
@@ -24,9 +33,7 @@ public class ManagerMainController {
      *    totally opaque, while left navigation bar should be partially
      *    transparent.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void showLeftList() {
@@ -42,9 +49,7 @@ public class ManagerMainController {
      *      to hide the left navigation bar together with avatar
      *      and make them non-clickable.
      * </p>
-     * @return none
      * @author Yongfan Jin
-     * @date 2021-04-07
      * @version 1.0
      */
     public void hideLeftList() {
@@ -54,6 +59,35 @@ public class ManagerMainController {
         showLeftList.setOpacity(1);
     }
 
+    /**
+     * <p>jump to manager's manage fund page</p>
+     * <p>Call {@link JumpTo#toManagerFund(Scene)} method in {@code JumptTo} class to jump to manager's manage fund page
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
+    public void toFund() throws IOException {
+        jump.toManagerFund(signOut.getScene());
+    }
+
+    /**
+     * <p>jump to manager's manage account page</p>
+     * <p>Call {@link JumpTo#toManagerAccount(Scene)} method in {@code JumptTo} class to jump to manager's manage account page
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
+    public void toAccount() throws IOException {
+        jump.toManagerAccount(signOut.getScene());
+    }
+
+    /**
+     * <p>jump to home page</p>
+     * <p>Call {@link JumpTo#toMain(Scene)} method in {@code JumptTo} class to jump to home page, and sign out.
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void signOut()throws IOException {
         GymSystemCheck.setAccountNumber(null);
         GymSystemCheck.setLogInState("not");

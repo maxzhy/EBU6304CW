@@ -7,18 +7,28 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-
-
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * class used in member's live page
+ * <p>class used in member's live page, user can book live session here, including booking and sending requests to certain
+ * trainer</p>
+ * @author Yongfan Jin
+ * @since 1.0
+ * @version 1.0
+ */
 public class MemberLiveController {
     public JumpTo jump = new JumpTo();
     public Label username;
     public Label signOut;
+    public Label home;
+    public Label live;
+    public Label video;
     public ImageView backToMemberMain;
     public Button book;
     public Button cancel;
@@ -38,6 +48,14 @@ public class MemberLiveController {
     public TableColumn<String, scheduleInfo> appointmentCol;
     public ObservableList<scheduleInfo> scheduleItems = FXCollections.observableArrayList();
     public ArrayList<String> originalSchedule;
+
+    /**
+     * <p>initialize</p>
+     * <p>call {@link #getSchedules()} to get live session information and show them in {@code TableView}.
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     @FXML
     public void initialize()throws IOException{
         username.setText(GymSystemCheck.checkAccountInfo(GymSystemCheck.accountNumber,"username"));
@@ -58,6 +76,14 @@ public class MemberLiveController {
         }
     }
 
+    /**
+     * <p>submit request</p>
+     * <p>check the legality of requests, if legal, call {@link GymSystem#addRequest(String, String, String, String)}
+     * to send the information to certain trainer
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void submitRequest() throws IOException{
         if (schedules.getSelectionModel().getSelectedItems().isEmpty()){
             messageRequest.setText("Please select a trainer by\nselecting a live session");
@@ -74,6 +100,14 @@ public class MemberLiveController {
 
     }
 
+    /**
+     * <p>book live session</p>
+     * <p> book the selected live session, user can only book live sessions that are not booked by others and are not
+     * booked by himself
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void bookLiveSession() throws IOException{
         messageBook.setText("");
         messageCancel.setText("");
@@ -99,6 +133,15 @@ public class MemberLiveController {
         getSchedules();
     }
 
+    /**
+     * <p>cancel book</p>
+     * <p>cancel the booked live session, user can only cancel live sessions that are booked by himself
+     * </p>
+     * @param
+     * @return
+     * @author
+     * @version
+     */
     public void cancelBook() throws IOException{
         messageBook.setText("");
         messageCancel.setText("");
@@ -119,11 +162,18 @@ public class MemberLiveController {
             return;
         }
         GymSystem.operateLiveSession(trainerAccount,date,time,GymSystemCheck.accountNumber,"cancel");
-        //GymSystem.deleteRequest(trainerAccount,GymSystemCheck.accountNumber);
         messageCancel.setText("Successfully canceled.");
         getSchedules();
     }
 
+    /**
+     * <p>get the schedule information</p>
+     * <p>call {@link GymSystemCheck#checkAllSchedules()} method in {@code GymSystemCheck} class to get the schedule
+     * information, and show them in the {@code TableView}.
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void getSchedules() throws IOException{
         originalSchedule = GymSystemCheck.checkAllSchedules();
         scheduleItems.clear();
@@ -150,16 +200,49 @@ public class MemberLiveController {
         schedules.setItems(scheduleItems);
     }
 
+    /**
+     * <p>jump to member's main page</p>
+     * <p>Call {@link JumpTo#toMemberMain(Scene)} method in {@code JumptTo} class to jump to member's main page
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void backToMemberMain()throws IOException {
         jump.toMemberMain(username.getScene());
     }
 
+    /**
+     * <p>jump to member's live page</p>
+     * <p>Call {@link JumpTo#toMemberLive(Scene)} method in {@code JumptTo} class to jump to member's live page
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
+    public void toMemberLive() throws IOException{
+        jump.toMemberLive(username.getScene());
+    }
+
+    /**
+     * <p>jump to home page</p>
+     * <p>Call {@link JumpTo#toMain(Scene)} method in {@code JumptTo} class to jump to home page, and sign out.
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void signOut()throws IOException{
         GymSystemCheck.setAccountNumber(null);
         GymSystemCheck.setLogInState("not");
         jump.toMain(username.getScene());
     }
 
+    /**
+     * class used to store schedule information
+     * <p>class used to store schedule information, including trainer's name, time of live session, appointment state
+     * trainer's account</p>
+     * @author Yongfan Jin
+     * @since 1.0
+     * @version 1.0
+     */
     public static class scheduleInfo {
         private final SimpleStringProperty trainerNameProperty = new SimpleStringProperty();
         private final SimpleStringProperty timeProperty = new SimpleStringProperty();

@@ -1,4 +1,4 @@
-package GymSystem.test;
+package GymSystem.Test;
 
 import GymSystem.BoundaryClass.SignUp.SignUpController;
 import org.junit.jupiter.api.Test;

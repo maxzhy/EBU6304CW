@@ -1,20 +1,12 @@
-package GymSystem.test;
+package GymSystem.Test;
 
 import GymSystem.ControlClass.GymSystem;
 import GymSystem.ControlClass.GymSystemCheck;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.text.DateFormatter;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.Clock;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
-
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class GymSystemTest {
 
@@ -65,5 +57,9 @@ class GymSystemTest {
     @Test
     void addRequest() throws IOException{
         GymSystem.addRequest("trainer01","ecce","I want to be thinner","I'm good at running");
+    }
+    @Test
+    void addIncome() throws IOException{
+        GymSystem.addIncome("150","ecce","premier");
     }
 }
