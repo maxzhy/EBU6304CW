@@ -1,5 +1,13 @@
 package GymSystem.EntityClass;
 
+/**
+ * contain the number of different kinds of members
+ * <p>contain the number of different kinds of members, including normal member, premier member, platinum member and
+ * trainer</p>
+ * @author Yongfan Jin
+ * @since 1.0
+ * @version 1.0
+ */
 public class NumberOfAccount {
     private int numOfMember;
     private int numOfPremier;

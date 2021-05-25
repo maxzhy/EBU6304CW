@@ -1,5 +1,12 @@
 package GymSystem.EntityClass;
 
+/**
+ * class for income
+ * <p>class for income</p>
+ * @author Yongfan Jin
+ * @since 1.0
+ * @version 1.0
+ */
 public class Income {
     String account;
     String amount;

@@ -34,7 +34,7 @@
                </font>
             </Label>
             <TextField focusTraversable="false" layoutX="301.0" layoutY="17.0" prefHeight="32.0" prefWidth="130.0" style="-fx-background-radius: 30px;" />
-            <Label fx:id="live" layoutX="172.0" layoutY="21.0" onMouseClicked="#toLive" text="Live">
+            <Label fx:id="live" layoutX="172.0" layoutY="21.0" text="Live">
                <font>
                   <Font size="18.0" />
                </font>

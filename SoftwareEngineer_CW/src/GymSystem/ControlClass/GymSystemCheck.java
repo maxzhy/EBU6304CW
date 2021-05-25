@@ -14,7 +14,7 @@ import java.util.Collections;
  * <p>Class for several static method, aim to check something or return some information</p>
  * @author Yongfan Jin
  * @since 1.0
- * @version 1.0
+ * @version 4.2
  */
 public class GymSystemCheck {
     public static String logInState="not"; //"manager","trainer","member","premier_member","platinum_member"
@@ -147,6 +147,15 @@ public class GymSystemCheck {
         }
     }
 
+    /**
+     * <p>get the schedule information of certain trainer</p>
+     * <p>read the schedule.txt and get the schedule information of certain trainer, stored in a {@code ArrayList<>}
+     * </p>
+     * @param acccountNumberInput str account number of trainer, whose schedule information is needed to be got
+     * @return the schedule information of the trainer
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public static ArrayList<String> checkSchedule(String acccountNumberInput) throws IOException {
         String fileName = "src/GymSystem/Information/schedule.txt";
         FileReader fileReader = new FileReader(fileName);
@@ -170,6 +179,13 @@ public class GymSystemCheck {
         return schedules;
     }
 
+    /**
+     * <p>get all schedule information</p>
+     * <p>read the schedule.txt and get the schedule information of trainers, stored in a {@code ArrayList<>}
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public static ArrayList<String> checkAllSchedules() throws IOException{
         String fileName = "src/GymSystem/Information/schedule.txt";
         FileReader fileReader = new FileReader(fileName);
@@ -189,6 +205,15 @@ public class GymSystemCheck {
         return schedules;
     }
 
+    /**
+     * <p>sort the schedule information</p>
+     * <p>sort schedule information by time from farthest to most recent
+     * </p>
+     * @param inputSchedule ArrayList<String> the array of schedule information
+     * @return the sorted information
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public static ArrayList<String> sortSchedule(ArrayList<String> inputSchedule){
         for (int i = 0; i < inputSchedule.size(); i++) {
             for (int j = 0; j < inputSchedule.size() - i - 1; j++) {
@@ -200,6 +225,15 @@ public class GymSystemCheck {
         return inputSchedule;
     }
 
+    /**
+     * <p>get the request information of certain trainer</p>
+     * <p>read the requests.txt and get the schedule information of certain trainer, stored in a {@code ArrayList<>}
+     * </p>
+     * @param trainerAccInput str the trainer's account number, whose requests are needed to be got
+     * @return the array containing the requests
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public static ArrayList<String> checkRequest(String trainerAccInput) throws IOException{
         String fileName = "src/GymSystem/Information/requests.txt";
         FileReader fileReader = new FileReader(fileName);
@@ -250,6 +284,14 @@ public class GymSystemCheck {
         return request;
     }
 
+    /**
+     * <p>check income records</p>
+     * <p>read the income.txt file to get the information of income record
+     * </p>
+     * @return the array containing the information of income record
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public static ArrayList<Income> checkIncome() throws IOException{
         String fileName = "src/GymSystem/Information/income.txt";
         FileReader fileReader = new FileReader(fileName);
@@ -264,6 +306,14 @@ public class GymSystemCheck {
         return incomes;
     }
 
+    /**
+     * <p>check the number of different kinds of users</p>
+     * <p>read the accounts.txt file to get the numbers of different kinds of users
+     * </p>
+     * @return instance variable containing the numbers of different kinds of users
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public static NumberOfAccount checkNumberOfAcc() throws IOException{
         String fileName = "src/GymSystem/Information/accounts.txt";
         FileReader fileReader = new FileReader(fileName);

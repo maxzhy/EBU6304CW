@@ -1,5 +1,12 @@
 package GymSystem.EntityClass;
 
+/**
+ * <p>account</p>
+ * <p>class for account
+ * </p>
+ * @author Yongfan Jin
+ * @version 1.0
+ */
 public abstract class Account {
     private int accountNum;
     private String password;

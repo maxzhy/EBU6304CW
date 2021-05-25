@@ -2,12 +2,20 @@ package GymSystem.BoundaryClass.Trainer;
 
 import GymSystem.ControlClass.GymSystemCheck;
 import GymSystem.ControlClass.JumpTo;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-
 import java.io.IOException;
 
+/**
+ * class used in Trainer's main page
+ * <p>class used in Trainer's main page.
+ * and students' requests</p>
+ * @author Yongfan Jin
+ * @since 1.0
+ * @version 1.2
+ */
 public class TrainerMainController {
     public JumpTo jump = new JumpTo();
     public Label signOut;
@@ -58,10 +66,24 @@ public class TrainerMainController {
         jump.toUploadVideo(username.getScene());
     }
 
+    /**
+     * <p>jump to trainer's manage class page</p>
+     * <p>Call {@link JumpTo#toTrainerClass(Scene)} method in {@code JumptTo} class to jump to trainer's manage class page.
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void toClass() throws IOException {
         jump.toTrainerClass(signOut.getScene());
     }
 
+    /**
+     * <p>jump to home page</p>
+     * <p>Call {@link JumpTo#toMain(Scene)} method in {@code JumptTo} class to jump to home page, and sign out.
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void signOut()throws IOException {
         GymSystemCheck.setAccountNumber(null);
         GymSystemCheck.setLogInState("not");

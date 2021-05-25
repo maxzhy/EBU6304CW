@@ -3,13 +3,9 @@ package GymSystem.BoundaryClass.SignUp;
 import GymSystem.ControlClass.GymSystem;
 import GymSystem.ControlClass.GymSystemCheck;
 import GymSystem.ControlClass.JumpTo;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import java.io.IOException;
 
 /**

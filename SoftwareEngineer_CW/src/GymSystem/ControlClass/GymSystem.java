@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * <p>The Control class, including ......</p>
  * @author Yongfan Jin
  * @since 1.0
- * @version 1.0
+ * @version 4.0
  */
 public interface GymSystem {
 
@@ -71,6 +71,15 @@ public interface GymSystem {
         return isLegal;
     }
 
+    /**
+     * <p>add schedule to schedule.txt</p>
+     * <p>add the input parameters into the schedule.txt file
+     * </p>
+     * @param date str the date of schedule
+     * @param timePeriod str the time period of schedule
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     static void addSchedule(String date, String timePeriod) throws IOException{
         String fileName = "src/GymSystem/Information/schedule.txt";
         FileWriter fileWriter = new FileWriter(fileName, true);
@@ -83,6 +92,21 @@ public interface GymSystem {
         fileWriter.close();
     }
 
+    /**
+     * <p>change information</p>
+     * <p>change information in certain file, for accounts.txt, it can replace the certain content with input content,
+     * for schedule.txt, it can delete some certain information
+     * </p>
+     * @param itemToBeChanged str the content that is to be changed
+     * @param typeOfItem str the type of the content, "schedule", "username", "password", "phone number", "sexual"
+     *                   "membership"
+     * @param mode str the mode of change, "delete" to delete information
+     *             "change" to change information
+     * @param targetValue str the content that is to changed to
+     * @throws IOException
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     static void changeInfo(String itemToBeChanged,String typeOfItem,String mode,String targetValue) throws IOException{
         String fileName = "";
         String accountNum;
@@ -179,6 +203,19 @@ public interface GymSystem {
         }
     }
 
+    /**
+     * <p>oprate live session</p>
+     * <p>operate live session records in schedule.txt, including booking and canceling
+     * </p>
+     * @param trainerAccInput str trainer's account number
+     * @param dateInput str the date of live session
+     * @param timeInput str the time period of live session
+     * @param memberAccInput str the booker's account number
+     * @param mode str the mode of operation, "book" or "cancel"
+     * @throws IOException
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     static void operateLiveSession(String trainerAccInput,String dateInput,String timeInput,String memberAccInput,String mode) throws IOException{
         String fileName = "src/GymSystem/Information/schedule.txt";
         File oldFile = new File(fileName);
@@ -237,6 +274,18 @@ public interface GymSystem {
         newFile.renameTo(oldFile);
     }
 
+    /**
+     * <p>add request</p>
+     * <p>add requests to the requests.txt
+     * </p>
+     * @param trainerAccInput str the trainer's account
+     * @param studentAccInput str the student's account
+     * @param targetInput str the content of targets
+     * @param abilityInput str the content of physical ability
+     * @throws IOException
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     static void addRequest(String trainerAccInput, String studentAccInput, String targetInput, String abilityInput) throws IOException{
         String fileName = "src/GymSystem/Information/requests.txt";
         FileWriter fileWriter = new FileWriter(fileName, true);
@@ -249,6 +298,16 @@ public interface GymSystem {
         fileWriter.close();
     }
 
+    /**
+     * <p>add income records</p>
+     * <p>add income records in income.txt
+     * </p>
+     * @param amount str the amount of income
+     * @param accNumInput str the account of purchaser
+     * @param state str where the income from, "premier" or "platinum"
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     static void addIncome(String amount, String accNumInput, String state) throws IOException{
         String fileName = "src/GymSystem/Information/income.txt";
         FileWriter fileWriter = new FileWriter(fileName, true);
