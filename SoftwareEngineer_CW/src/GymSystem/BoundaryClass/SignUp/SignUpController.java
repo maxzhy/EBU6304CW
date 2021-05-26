@@ -3,6 +3,7 @@ package GymSystem.BoundaryClass.SignUp;
 import GymSystem.ControlClass.GymSystem;
 import GymSystem.ControlClass.GymSystemCheck;
 import GymSystem.ControlClass.JumpTo;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -34,6 +35,8 @@ public class SignUpController {
     public Label phnmIcon;
     public Label sexIcon;
     public RadioButton isTrainer;
+    public Label home;
+    public Label login;
 
     /**
      * <p>Sign up method</p>
@@ -255,5 +258,19 @@ public class SignUpController {
     public void backToLogIn() throws Exception {
         jump.toLogIn(man.getScene());
     }
+
+    /**
+     * <p>Back to main page</p>
+     * <p>By changing the scene configuration to change the page, through calling
+     * {@code toMain()} method in {@code jump}class {@link JumpTo#toMain(Scene)}
+     * </p>
+     * @author Yongfan Jin
+     * @throws IOException
+     * @version 1.1
+     */
+    public void backToMain() throws IOException {
+        jump.toMain(man.getScene());
+    }
+
 
 }

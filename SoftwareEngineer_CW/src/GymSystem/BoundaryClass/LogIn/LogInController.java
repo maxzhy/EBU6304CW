@@ -26,6 +26,7 @@ public class LogInController {
     public Label messageBoard;
     public Label signUp;
     public ImageView backToMain;
+    public Label home;
 
     /**
      * <p>Jump to sign up page</p>
@@ -45,10 +46,10 @@ public class LogInController {
      * {@code toMain()} method in {@code jump}class {@link JumpTo#toMain(Scene)}
      * </p>
      * @author Yongfan Jin
-     * @throws Exception
+     * @throws IOException
      * @version 1.1
      */
-    public void backToMain() throws Exception {
+    public void backToMain() throws IOException {
         jump.toMain(signUp.getScene());
     }
 

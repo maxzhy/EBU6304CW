@@ -20,23 +20,23 @@
       </ImageView>
       <AnchorPane layoutX="450.0" prefHeight="60.0" prefWidth="450.0">
          <children>
-            <Label layoutX="224.0" layoutY="21.0" style="-fx-opacity: 1;" text="Log in">
+            <Label fx:id="login" layoutX="224.0" layoutY="21.0" onMouseClicked="#backToLogIn" style="-fx-opacity: 1;" text="Log in">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="96.0" layoutY="21.0" text="Video">
+            <Label disable="true" layoutX="96.0" layoutY="21.0" text="Video">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
             <TextField focusTraversable="false" layoutX="301.0" layoutY="17.0" prefHeight="32.0" prefWidth="130.0" style="-fx-background-radius: 30px;" />
-            <Label layoutX="172.0" layoutY="21.0" text="Live">
+            <Label disable="true" layoutX="172.0" layoutY="21.0" text="Live">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="21.0" layoutY="21.0" text="Home">
+            <Label fx:id="home" layoutX="21.0" layoutY="21.0" onMouseClicked="#backToMain" text="Home">
                <font>
                   <Font size="18.0" />
                </font>
