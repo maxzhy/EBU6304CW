@@ -33,18 +33,19 @@ public class SignUpController {
     public Label usnmIcon;
     public Label phnmIcon;
     public Label sexIcon;
+    public RadioButton isTrainer;
 
     /**
      * <p>Sign up method</p>
      * <p>Three steps for sign up: 1.Check if all information: including account number, password,
      *      username, phone number, and sexual are all correct. 2.If all correct,call {@code addAccountInfo()}
-     *      method in {@code GymSystem} class {@link GymSystem#addAccountInfo(String, String, String, String, String)}
+     *      method in {@code GymSystem} class {@link GymSystem#addAccountInfo(String, String, String, String, String, String)}
      *      to add account information into accounts.txt. 3. Call {@code initialize()}{@link #initialize()} method to
      *      initialize components.
      * </p>
      * @author Yongfan Jin
      * @throws IOException
-     * @version 1.0
+     * @version 2.0
      */
     public void signUp() throws IOException {
         boolean accLegal = accIcon.getText().equals("√");
@@ -52,6 +53,7 @@ public class SignUpController {
         boolean usnmLegal = usnmIcon.getText().equals("√");
         boolean phnmLegal = phnmIcon.getText().equals("√");
         boolean sexLegal = isMan || isWoman;
+        boolean isToBeTrainer = isTrainer.isSelected();
         boolean allLegal = accLegal && pswLegal && usnmLegal && phnmLegal && sexLegal;
 
         if (!allLegal) {
@@ -64,8 +66,9 @@ public class SignUpController {
         String usName = username.getText();
         String phNum = phoneNum.getText();
         String sexual = isMan ? "man" : "woman";
+        String typeOfUser = isToBeTrainer ? "trainer" : "member";
 
-        GymSystem.addAccountInfo(actNum, psw, usName, phNum, sexual);
+        GymSystem.addAccountInfo(actNum, psw, usName, phNum, sexual,typeOfUser);
         initialize();
         messageBoard.setText("Sign up successfully!");
     }

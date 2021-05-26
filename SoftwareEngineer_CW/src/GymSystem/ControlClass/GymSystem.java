@@ -21,15 +21,16 @@ public interface GymSystem {
      * @param username str username
      * @param phoneNum str phone number
      * @param sexual str sexual
+     * @param typeOfUser str type of user, "member" or "trainer"
      * @throws IOException
      * @author Yongfan Jin
-     * @version 1.0
+     * @version 2.0
      */
-     static void addAccountInfo(String accountNum, String password, String username, String phoneNum, String sexual) throws IOException {
+     static void addAccountInfo(String accountNum, String password, String username, String phoneNum, String sexual, String typeOfUser) throws IOException {
         String fileName = "src/GymSystem/Information/accounts.txt";
         FileWriter fileWriter = new FileWriter(fileName, true);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        String accountInfo = accountNum + '/' + password + '/' + username + '/' + phoneNum + '/' + sexual + "/member";
+        String accountInfo = accountNum + '/' + password + '/' + username + '/' + phoneNum + '/' + sexual + '/' + typeOfUser;
         bufferedWriter.write(accountInfo);
         bufferedWriter.newLine();
         bufferedWriter.flush();
