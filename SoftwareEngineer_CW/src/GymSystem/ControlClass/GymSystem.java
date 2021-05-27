@@ -93,6 +93,7 @@ public interface GymSystem {
         fileWriter.close();
     }
 
+
     /**
      * <p>change information</p>
      * <p>change information in certain file, for accounts.txt, it can replace the certain content with input content,

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Member.MemberLiveController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Member.MemberLiveController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="956.0" layoutY="-4.0">
          <image>
@@ -22,7 +22,7 @@
       </ImageView>
       <AnchorPane focusTraversable="true" layoutX="-9.0" layoutY="-11.0" prefHeight="600.0" prefWidth="900.0">
          <children>
-            <AnchorPane layoutX="50.0" layoutY="151.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: rgba(0,0,0,0.5);">
+            <AnchorPane layoutX="50.0" layoutY="151.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: rgba(0,0,0,0.7);">
                <children>
                   <Label layoutX="38.0" layoutY="31.0" text="Premier&amp;Platinum members only" textFill="WHITE">
                      <font>
@@ -63,7 +63,7 @@
             </AnchorPane>
             <ImageView fx:id="backToMemberMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#backToMemberMain" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/LIST.png" />
+                  <Image url="@../../images/x.png" />
                </image>
             </ImageView>
             <AnchorPane layoutX="450.0" prefHeight="60.0" prefWidth="450.0">

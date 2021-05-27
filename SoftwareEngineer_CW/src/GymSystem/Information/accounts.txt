@@ -3,7 +3,7 @@ trainer01/111111/Dio/12345678911/man/trainer
 trainer02/111111/quin/12345678911/man/trainer
 ecce/111111/Ecc/12332112311/man/premier
 jyf/111111/Eccent/12576711550/man/platinum
-member1/111111/member1/12332112311/man/member
+member1/111111/member1/12332112311/man/platinum
 member2/111111/member2/12576711550/man/member
 member3/111111/member3/12332112311/man/member
 member4/111111/member4/12576711550/man/member

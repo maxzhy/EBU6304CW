@@ -2,15 +2,29 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane focusTraversable="true" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.MainController">
+<AnchorPane focusTraversable="true" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.MainController">
    <children>
-      <Text layoutX="164.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" LONDON FITNESS">
+      <ImageView fitHeight="600.0" fitWidth="956.0" layoutX="-11.0" layoutY="1.0">
+         <image>
+            <Image url="@images/background.jpeg" />
+         </image>
+      </ImageView>
+      <Text fill="#fff5f5" layoutX="171.0" layoutY="249.0" stroke="#462f2f" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text=" LONDON FITNESS">
+         <font>
+            <Font name="Century751 BT Italic" size="64.0" />
+         </font>
+         <effect>
+            <Shadow />
+         </effect>
+      </Text>
+      <Text fill="#fff5f5" layoutX="171.0" layoutY="241.0" stroke="#462f2f" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text=" LONDON FITNESS">
          <font>
             <Font name="Century751 BT Italic" size="64.0" />
          </font>
@@ -43,7 +57,7 @@
       </AnchorPane>
       <ImageView fx:id="showLeftList" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#showLeftList" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/avatar1.jpg" />
+            <Image url="@images/LIST.png" />
          </image>
       </ImageView>
       <AnchorPane fx:id="leftList" layoutY="1.0" mouseTransparent="true" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: black; -fx-opacity: 0;">
@@ -75,7 +89,7 @@
             </Label>
             <ImageView fx:id="hideLeftList" fitHeight="30.0" fitWidth="30.0" layoutX="17.0" layoutY="14.0" onMouseClicked="#hideLeftList" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/avatar1.jpg" />
+                  <Image url="@images/x.png" />
                </image>
             </ImageView>
             <Label layoutX="22.0" layoutY="300.0" text="Dear Guest, please" textFill="WHITE">
@@ -83,12 +97,12 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="leftListLogIn" layoutX="22.0" layoutY="324.0" onMouseClicked="#jumpToLogIn" text="log in" textFill="#8200ff">
+            <Label fx:id="leftListLogIn" layoutX="22.0" layoutY="324.0" onMouseClicked="#jumpToLogIn" text="log in" textFill="#00eeff">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="leftListSignUp" layoutX="100.0" layoutY="324.0" onMouseClicked="#jumpToSignUp" text="sign up" textFill="#00ffee">
+            <Label fx:id="leftListSignUp" layoutX="100.0" layoutY="324.0" onMouseClicked="#jumpToSignUp" text="sign up" textFill="#00eeff">
                <font>
                   <Font size="18.0" />
                </font>

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Manager.ManagerAccountController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Manager.ManagerAccountController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="956.0" layoutY="5.0">
          <image>
@@ -23,7 +23,7 @@
          <children>
             <ImageView fx:id="backToManagerMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#toManagerMain" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/LIST.png" />
+                  <Image url="@../../images/x.png" />
                </image>
             </ImageView>
             <AnchorPane layoutX="450.0" prefHeight="60.0" prefWidth="450.0">
@@ -66,7 +66,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TabPane layoutX="69.0" layoutY="100.0" prefHeight="460.0" prefWidth="769.0" style="-fx-background-color: rgba(0,0,0,0.5);" tabClosingPolicy="UNAVAILABLE">
+            <TabPane layoutX="69.0" layoutY="100.0" prefHeight="460.0" prefWidth="769.0" style="-fx-background-color: rgba(0,0,0,0.7);" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="Number">
                   <content>

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane focusTraversable="true" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Member.MemberMainController">
+<AnchorPane focusTraversable="true" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Member.MemberMainController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="956.0">
          <image>
@@ -76,7 +76,7 @@
             </Label>
             <ImageView fx:id="hideLeftList" fitHeight="30.0" fitWidth="30.0" layoutX="17.0" layoutY="14.0" onMouseClicked="#hideLeftList" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/LIST.png" />
+                  <Image url="@../../images/x.png" />
                </image>
             </ImageView>
          </children>

@@ -71,7 +71,8 @@ public class LogInController {
         String passwordInput = password.getText();
         accountNum.setText("");
         password.setText("");
-        boolean isSuccess = GymSystem.logIn(accountNumInput, passwordInput);
+        boolean isSuccess = GymSystem.
+                logIn(accountNumInput, passwordInput);
         if (isSuccess) {
             String username = GymSystemCheck.checkAccountInfo(accountNumInput, "username");
             String sexual = GymSystemCheck.checkAccountInfo(accountNumInput, "sexual");

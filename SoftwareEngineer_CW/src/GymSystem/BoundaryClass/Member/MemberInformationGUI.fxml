@@ -10,8 +10,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane focusTraversable="true" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Member.MemberInformationController">
+<AnchorPane focusTraversable="true" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Member.MemberInformationController">
    <children>
+      <ImageView fitHeight="600.0" fitWidth="956.0">
+         <image>
+            <Image url="@../../images/background.jpeg" />
+         </image>
+      </ImageView>
       <AnchorPane layoutX="50.0" layoutY="94.0" prefHeight="457.0" prefWidth="800.0" style="-fx-background-color: #000000; -fx-opacity: 0.5;">
          <children>
             <Label layoutX="208.0" layoutY="34.0" text="My Information" textFill="WHITE">
@@ -116,7 +121,7 @@
       </AnchorPane>
       <ImageView fx:id="toMemberMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#toMemberMain" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/avatar1.jpg" />
+            <Image url="@../../images/x.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="450.0" prefHeight="60.0" prefWidth="450.0">

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Manager.ManagerFundController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Manager.ManagerFundController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="956.0" layoutY="5.0">
          <image>
@@ -17,7 +17,7 @@
       </ImageView>
       <AnchorPane focusTraversable="true" layoutX="-9.0" layoutY="-11.0" prefHeight="600.0" prefWidth="900.0">
          <children>
-            <AnchorPane layoutX="50.0" layoutY="110.0" prefHeight="441.0" prefWidth="800.0" style="-fx-background-color: rgba(0,0,0,0.5);">
+            <AnchorPane layoutX="50.0" layoutY="110.0" prefHeight="441.0" prefWidth="800.0" style="-fx-background-color: rgba(0,0,0,0.7);">
                <children>
                   <TextArea fx:id="incomePane" editable="false" focusTraversable="false" layoutX="32.0" layoutY="57.0" prefHeight="326.0" prefWidth="569.0" wrapText="true">
                      <font>
@@ -43,7 +43,7 @@
             </AnchorPane>
             <ImageView fx:id="backToManagerMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#toManagerMain" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/LIST.png" />
+                  <Image url="@../../images/x.png" />
                </image>
             </ImageView>
             <AnchorPane layoutX="450.0" prefHeight="60.0" prefWidth="450.0">

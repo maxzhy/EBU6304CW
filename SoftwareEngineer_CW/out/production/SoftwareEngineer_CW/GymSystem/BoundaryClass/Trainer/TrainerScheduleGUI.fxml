@@ -14,11 +14,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Trainer.TrainerScheduleController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Trainer.TrainerScheduleController">
    <children>
+      <ImageView fitHeight="620.0" fitWidth="966.0">
+         <image>
+            <Image url="@../../images/background.jpeg" />
+         </image>
+      </ImageView>
       <ImageView fx:id="ToTrainerClass" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#toTrainerClass" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/avatar1.jpg" />
+            <Image url="@../../images/x.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="450.0" prefHeight="60.0" prefWidth="450.0">
@@ -50,7 +55,7 @@
         <tabs>
           <Tab text="Add Schedule">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="731.0" style="-fx-background-color: rgba(0,0,0,0.3);">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="731.0" style="-fx-background-color: rgba(0,0,0,0.7);">
                      <children>
                         <DatePicker fx:id="date" editable="false" layoutX="96.0" layoutY="54.0" prefHeight="23.0" prefWidth="200.0" />
                         <ChoiceBox fx:id="timePeriod" layoutX="436.0" layoutY="54.0" prefHeight="23.0" prefWidth="200.0" />
@@ -98,7 +103,7 @@
           </Tab>
           <Tab text="Delete Schedule">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.3);">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.7);">
                      <children>
                         <ListView fx:id="originalDelete" layoutX="32.0" layoutY="62.0" prefHeight="280.0" prefWidth="312.0" />
                         <Label layoutX="124.0" layoutY="30.0" text="Your schedule" textFill="WHITE">
