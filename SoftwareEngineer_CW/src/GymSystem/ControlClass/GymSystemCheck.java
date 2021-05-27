@@ -1,5 +1,6 @@
 package GymSystem.ControlClass;
 
+import GymSystem.EntityClass.Account;
 import GymSystem.EntityClass.Income;
 import GymSystem.EntityClass.NumberOfAccount;
 
@@ -331,5 +332,33 @@ public class GymSystemCheck {
         bufferedReader.close();
         fileReader.close();
         return num;
+    }
+
+    /**
+     * <p>check the information of every accounts</p>
+     * <p>read the accounts.txt file to get the the information of every accounts
+     * </p>
+     * @return ArrayList of Account, who contains the information of every account
+     * @author Yongfan Jin
+     * @version 1.0
+     */
+    public static ArrayList<Account> checkAccounts() throws IOException{
+        String fileName = "src/GymSystem/Information/accounts.txt";
+        FileReader fileReader = new FileReader(fileName);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String oneLine;
+        ArrayList<Account> accounts = new ArrayList<Account>();
+        while ((oneLine = bufferedReader.readLine()) != null){
+            accounts.add(new Account(
+                    oneLine.split("/")[0],
+                    oneLine.split("/")[2],
+                    oneLine.split("/")[3],
+                    oneLine.split("/")[4],
+                    oneLine.split("/")[5]
+                    ));
+        }
+        bufferedReader.close();
+        fileReader.close();
+        return accounts;
     }
 }

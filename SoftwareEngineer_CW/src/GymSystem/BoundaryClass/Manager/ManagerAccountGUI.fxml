@@ -2,6 +2,10 @@
 
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,40 +21,6 @@
       </ImageView>
       <AnchorPane focusTraversable="true" layoutX="-9.0" layoutY="-11.0" prefHeight="600.0" prefWidth="900.0">
          <children>
-            <AnchorPane layoutX="50.0" layoutY="110.0" prefHeight="441.0" prefWidth="800.0" style="-fx-background-color: rgba(0,0,0,0.5);">
-               <children>
-                  <PieChart fx:id="chart" layoutX="89.0" layoutY="21.0" onMouseClicked="#toggleNumbers" style="-fx-background-color: rgba(255,255,255,0.8);" />
-                  <AnchorPane fx:id="numPane" layoutX="605.0" layoutY="55.0" prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: rgba(0,0,0,0.7);" visible="false">
-                     <children>
-                        <Label fx:id="numOfTrainer" layoutX="10.0" layoutY="225.0" prefHeight="22.0" prefWidth="166.0" textFill="WHITE">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="numOfPlatinum" layoutX="10.0" layoutY="175.0" prefHeight="22.0" prefWidth="166.0" textFill="WHITE">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="numOfPremier" layoutX="10.0" layoutY="125.0" prefHeight="22.0" prefWidth="166.0" textFill="WHITE">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="numOfMember" layoutX="10.0" layoutY="75.0" prefHeight="22.0" prefWidth="166.0" textFill="WHITE">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="numOfTotal" layoutX="10.0" layoutY="25.0" prefHeight="22.0" prefWidth="166.0" textFill="WHITE">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
             <ImageView fx:id="backToManagerMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#toManagerMain" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../images/LIST.png" />
@@ -96,6 +66,65 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <TabPane layoutX="69.0" layoutY="100.0" prefHeight="460.0" prefWidth="769.0" style="-fx-background-color: rgba(0,0,0,0.5);" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Number">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <PieChart fx:id="chart" layoutX="49.0" layoutY="29.0" onMouseClicked="#toggleNumbers" prefHeight="357.0" prefWidth="460.0" style="-fx-background-color: rgba(255,255,255,0.8);" />
+                              <AnchorPane fx:id="numPane" layoutX="550.0" layoutY="37.0" prefHeight="278.0" prefWidth="180.0" style="-fx-background-color: rgba(0,0,0,0.7);" visible="false">
+                                 <children>
+                                    <Label fx:id="numOfTrainer" layoutX="10.0" layoutY="225.0" prefHeight="22.0" prefWidth="166.0" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="numOfPlatinum" layoutX="10.0" layoutY="175.0" prefHeight="22.0" prefWidth="166.0" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="numOfPremier" layoutX="10.0" layoutY="125.0" prefHeight="22.0" prefWidth="166.0" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="numOfMember" layoutX="10.0" layoutY="75.0" prefHeight="22.0" prefWidth="166.0" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="numOfTotal" layoutX="10.0" layoutY="25.0" prefHeight="22.0" prefWidth="166.0" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Information">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="accountInfoTable" layoutX="38.0" layoutY="34.0" prefHeight="372.0" prefWidth="696.0">
+                                <columns>
+                                  <TableColumn fx:id="accNumCol" prefWidth="127.20004272460938" text="Account" />
+                                    <TableColumn fx:id="usernameCol" prefWidth="157.59999084472656" text="Username" />
+                                    <TableColumn fx:id="phoneNumCol" prefWidth="217.5999755859375" text="Phone" />
+                                    <TableColumn fx:id="sexualCol" prefWidth="87.20001220703125" text="Sexual" />
+                                    <TableColumn fx:id="typeCol" prefWidth="106.4000244140625" text="Type" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
          </children>
       </AnchorPane>
    </children>

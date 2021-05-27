@@ -1,7 +1,9 @@
 package GymSystem.BoundaryClass.Manager;
 
+import GymSystem.BoundaryClass.Member.MemberLiveController;
 import GymSystem.ControlClass.GymSystemCheck;
 import GymSystem.ControlClass.JumpTo;
+import GymSystem.EntityClass.Account;
 import GymSystem.EntityClass.NumberOfAccount;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,9 +11,14 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
+import java.util.ArrayList;
+
 /**
  * Class for manager's manage accounts page
  * <p>Class for manager's manage accounts page, manager can see how many accounts the gym system has.</p>
@@ -36,18 +43,28 @@ public class ManagerAccountController {
     public Label numOfTotal;
     public AnchorPane numPane;
     public int totalNum=0;
+    public TableView<Account> accountInfoTable;
+    public TableColumn<String,Account> accNumCol;
+    public TableColumn<String,Account> usernameCol;
+    public TableColumn<String,Account> phoneNumCol;
+    public TableColumn<String,Account> sexualCol;
+    public TableColumn<String,Account> typeCol;
+    public ObservableList<Account> accountsItems = FXCollections.observableArrayList();
+
 
     /**
      * <p>initialize the page</p>
      * <p>call {@link GymSystemCheck#checkNumberOfAcc()} in {@code GymSystemCheck} class to get the data of accounts,
      * including the number of member, premier member, platinum member, trainer, also, calculate the total number of
-     * accounts for future use.
+     * accounts for future use. call{@link GymSystemCheck#checkAccounts()} in {@code GymSystemCheck} class to get the
+     * information of every accounts and show them on the {@code TableView}.
      * </p>
      * @author Yongfan Jin
-     * @version 1.0
+     * @version 2.0
      */
     @FXML
     public void initialize()throws IOException{
+        username.setText(GymSystemCheck.checkAccountInfo(GymSystemCheck.accountNumber,"username"));
         NumberOfAccount nums ;
         nums = GymSystemCheck.checkNumberOfAcc();
         chart.setTitle("Number of Users");
@@ -60,6 +77,16 @@ public class ManagerAccountController {
                 );
         chart.setData(pieChartData);
         totalNum = nums.getNumOfPlatinum()+nums.getNumOfMember()+nums.getNumOfPremier()+nums.getNumOfTrainer();
+
+        ArrayList<Account> accounts = GymSystemCheck.checkAccounts();
+        accountsItems.clear();
+        accountsItems.addAll(accounts);
+        accNumCol.setCellValueFactory(new PropertyValueFactory<String, Account>("accountNumProperty"));
+        usernameCol.setCellValueFactory(new PropertyValueFactory<String, Account>("usernameProperty"));
+        phoneNumCol.setCellValueFactory(new PropertyValueFactory<String, Account>("phoneNumProperty"));
+        sexualCol.setCellValueFactory(new PropertyValueFactory<String, Account>("sexualProperty"));
+        typeCol.setCellValueFactory(new PropertyValueFactory<String, Account>("typeProperty"));
+        accountInfoTable.setItems(accountsItems);
     }
 
     /**

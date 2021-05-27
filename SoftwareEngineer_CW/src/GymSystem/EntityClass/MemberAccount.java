@@ -12,4 +12,10 @@ public class MemberAccount extends Account{
     private double balance;
     private void recharge(){}
     private void upgrade(){}
+
+    public MemberAccount(String accNum, String username, String phoneNum, String sexual, String type, boolean isGeneral, double balance) {
+        super(accNum, username, phoneNum, sexual, type);
+        this.isGeneral = isGeneral;
+        this.balance = balance;
+    }
 }

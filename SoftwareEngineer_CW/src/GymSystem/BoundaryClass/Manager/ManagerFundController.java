@@ -41,6 +41,7 @@ public class ManagerFundController {
      */
     @FXML
     public void initialize()throws IOException{
+        username.setText(GymSystemCheck.checkAccountInfo(GymSystemCheck.accountNumber,"username"));
         String account;
         String amount;
         String from;
