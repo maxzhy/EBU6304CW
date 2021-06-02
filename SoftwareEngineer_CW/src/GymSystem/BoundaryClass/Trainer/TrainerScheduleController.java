@@ -130,6 +130,7 @@ public class TrainerScheduleController {
     public void applyDelete() throws IOException {
         for (String s: toBeDeletedSche) {
             String deleteItem = s.split(" ")[1] + '/' + s.split(" ")[2];
+            System.out.println(deleteItem);
             GymSystem.changeInfo(deleteItem,"schedule","delete","none");
         }
         showOriginalSchedule();
@@ -240,6 +241,17 @@ public class TrainerScheduleController {
      */
     public void toTrainerMain() throws IOException{
         jump.toTrainerMain(signOut.getScene());
+    }
+
+    /**
+     * <p>jump to trainer's watch video page</p>
+     * <p>Call {@link JumpTo#toTrainerWatchVideo(Scene)} (Scene)} (Scene)} method in {@code JumptTo} class to jump to trainer's watch video page
+     * </p>
+     * @author Zhaoyang Ma
+     * @version 2.0
+     */
+    public void toTrainerWatchVideo()throws IOException{
+        jump.toTrainerWatchVideo(signOut.getScene());
     }
 
 }

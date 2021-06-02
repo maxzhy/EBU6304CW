@@ -105,7 +105,14 @@ public class JumpTo {
         stage.setScene(presentScene);
     }
 
-    //Ma Zhaoyang
+    /**
+     * <p>jump to trainer upload video page</p>
+     * <p>jump to trainer upload video page
+     * </p>
+     * @param presentScene Scene the present scene
+     * @author Zhaoyang Ma
+     * @version 1.0
+     */
     public void toUploadVideo(Scene presentScene) throws IOException{
         Stage stage = (Stage) presentScene.getWindow();
         Parent newPage = FXMLLoader.load(getClass().getResource("../BoundaryClass/Trainer/TrainerUploadVideoGUI.fxml"));
@@ -214,6 +221,66 @@ public class JumpTo {
     public void toManagerAccount(Scene presentScene) throws IOException{
         Stage stage = (Stage) presentScene.getWindow();
         Parent newPage = FXMLLoader.load(getClass().getResource("../BoundaryClass/Manager/ManagerAccountGUI.fxml"));
+        presentScene.setRoot(newPage);
+        stage.setScene(presentScene);
+    }
+
+    /**
+     * <p>jump to member watch video page</p>
+     * <p>jump to member watch video page
+     * </p>
+     * @param presentScene Scene the present scene
+     * @author Zhaoyang Ma
+     * @version 2.0
+     */
+    public void toMemberWatchVideo(Scene presentScene) throws IOException{
+        Stage stage = (Stage) presentScene.getWindow();
+        Parent newPage = FXMLLoader.load(getClass().getResource("../BoundaryClass/Member/MemberWatchVideoGUI.fxml"));
+        presentScene.setRoot(newPage);
+        stage.setScene(presentScene);
+    }
+
+    /**
+     * <p>jump to trainer watch video page</p>
+     * <p>jump to trainer watch video page
+     * </p>
+     * @param presentScene Scene the present scene
+     * @author Zhaoyang Ma
+     * @version 2.0
+     */
+    public void toTrainerWatchVideo(Scene presentScene) throws IOException{
+        Stage stage = (Stage) presentScene.getWindow();
+        Parent newPage = FXMLLoader.load(getClass().getResource("../BoundaryClass/Trainer/TrainerWatchVideoGUI.fxml"));
+        presentScene.setRoot(newPage);
+        stage.setScene(presentScene);
+    }
+
+    /**
+     * <p>jump to manager upload video page</p>
+     * <p>jump to manager upload video page
+     * </p>
+     * @param presentScene Scene the present scene
+     * @author Zhaoyang Ma
+     * @version 1.0
+     */
+    public void toManagerUploadVideo(Scene presentScene) throws IOException{
+        Stage stage = (Stage) presentScene.getWindow();
+        Parent newPage = FXMLLoader.load(getClass().getResource("../BoundaryClass/Manager/ManagerUploadVideoGUI.fxml"));
+        presentScene.setRoot(newPage);
+        stage.setScene(presentScene);
+    }
+
+    /**
+     * <p>jump to trainer watch video page</p>
+     * <p>jump to trainer watch video page
+     * </p>
+     * @param presentScene Scene the present scene
+     * @author Zhaoyang Ma
+     * @version 2.0
+     */
+    public void toManagerWatchVideo(Scene presentScene) throws IOException{
+        Stage stage = (Stage) presentScene.getWindow();
+        Parent newPage = FXMLLoader.load(getClass().getResource("../BoundaryClass/Manager/ManagerWatchVideoGUI.fxml"));
         presentScene.setRoot(newPage);
         stage.setScene(presentScene);
     }

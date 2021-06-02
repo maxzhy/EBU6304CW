@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane focusTraversable="true" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Manager.ManagerWatchVideoController">
+   <children>
+      <ImageView fitHeight="637.0" fitWidth="976.0">
+         <image>
+            <Image url="@../../images/background.jpeg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="50.0" layoutY="94.0" prefHeight="457.0" prefWidth="800.0" style="-fx-background-color: rgba(0,0,0,0.5);">
+         <children>
+            <ListView fx:id="videoList" layoutX="52.0" layoutY="52.0" prefHeight="318.0" prefWidth="704.0" />
+            <Button fx:id="playVideo" layoutX="200.0" layoutY="389.0" mnemonicParsing="false" onAction="#playVideo" text="Play">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <ChoiceBox fx:id="videoType" layoutX="326.0" layoutY="389.0" prefHeight="35.0" prefWidth="149.0" />
+            <Button fx:id="select" layoutX="540.0" layoutY="389.0" mnemonicParsing="false" onMouseClicked="#showSelectedVideos" text="select">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <ImageView fx:id="toManagerMain" fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="15.0" onMouseClicked="#toManagerMain" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/x.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="450.0" prefHeight="60.0" prefWidth="450.0">
+         <children>
+            <Label fx:id="signOut" layoutX="224.0" layoutY="21.0" onMouseClicked="#signOut" style="-fx-opacity: 1;" text="Sign out">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="video" layoutX="96.0" layoutY="21.0" text="Video">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField focusTraversable="false" layoutX="301.0" layoutY="17.0" prefHeight="32.0" prefWidth="130.0" style="-fx-background-radius: 30px;" />
+            <Label fx:id="live" disable="true" layoutX="172.0" layoutY="21.0" text="Live">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="home" layoutX="21.0" layoutY="21.0" onMouseClicked="#toManagerMain" text="Home">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

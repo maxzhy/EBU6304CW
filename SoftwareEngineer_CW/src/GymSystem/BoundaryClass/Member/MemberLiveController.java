@@ -137,10 +137,8 @@ public class MemberLiveController {
      * <p>cancel book</p>
      * <p>cancel the booked live session, user can only cancel live sessions that are booked by himself
      * </p>
-     * @param
-     * @return
-     * @author
-     * @version
+     * @author Yongfan Jin
+     * @version 1.0
      */
     public void cancelBook() throws IOException{
         messageBook.setText("");
@@ -233,6 +231,10 @@ public class MemberLiveController {
         GymSystemCheck.setAccountNumber(null);
         GymSystemCheck.setLogInState("not");
         jump.toMain(username.getScene());
+    }
+
+    public void toMemberWatchVideo() throws IOException{
+        jump.toMemberWatchVideo(username.getScene());
     }
 
     /**

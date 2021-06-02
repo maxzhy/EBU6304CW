@@ -82,4 +82,15 @@ public class ManagerFundController {
         GymSystemCheck.setLogInState("not");
         jump.toMain(signOut.getScene());
     }
+
+    /**
+     * <p>jump to manager watch video page</p>
+     * <p>Call {@link JumpTo#toManagerWatchVideo(Scene)} (Scene)} method in {@code JumptTo} class to jump to watch video page.
+     * </p>
+     * @author Zhaoyang Ma
+     * @version 2.0
+     */
+    public void toManagerWatchVideo() throws IOException {
+        jump.toManagerWatchVideo(signOut.getScene());
+    }
 }

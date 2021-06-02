@@ -2,6 +2,7 @@ package GymSystem.BoundaryClass.Member;
 
 import GymSystem.ControlClass.GymSystemCheck;
 import GymSystem.ControlClass.JumpTo;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -62,18 +63,57 @@ public class MemberMainController {
         showLeftList.setOpacity(1);
     }
 
+    /**
+     * <p>jump to member's live page</p>
+     * <p>Call {@link JumpTo#toMemberLive(Scene)} method in {@code JumptTo} class to jump to member's live page
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void toLive() throws IOException{
         jump.toMemberLive(username.getScene());
     }
 
+    /**
+     * <p>jump to member's upgrade page</p>
+     * <p>Call {@link JumpTo#toUpgrade(Scene)} method in {@code JumptTo} class to jump to member's upgrade page
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void toUpgrade()throws IOException{
         jump.toUpgrade(username.getScene());
     }
 
+    /**
+     * <p>jump to member's information page</p>
+     * <p>Call {@link JumpTo#toMemberInformation(Scene)} (Scene)} method in {@code JumptTo} class to jump to member's information page
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void toInformation() throws IOException{
         jump.toMemberInformation(username.getScene());
     }
 
+    /**
+     * <p>jump to member's watch video page</p>
+     * <p>Call {@link JumpTo#toMemberWatchVideo(Scene)} (Scene)} (Scene)} method in {@code JumptTo} class to jump to member's watch video page
+     * </p>
+     * @author Zhaoyang Ma
+     * @version 2.0
+     */
+    public void toMemberWatchVideo() throws IOException{
+        jump.toMemberWatchVideo(username.getScene());
+    }
+
+    /**
+     * <p>jump to home page</p>
+     * <p>Call {@link JumpTo#toMain(Scene)} method in {@code JumptTo} class to jump to home page, and sign out.
+     * </p>
+     * @author Yongfan Jin
+     * @version 1.0
+     */
     public void signOut()throws IOException {
         GymSystemCheck.setAccountNumber(null);
         GymSystemCheck.setLogInState("not");

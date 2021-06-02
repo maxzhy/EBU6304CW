@@ -24,6 +24,8 @@ public class GymSystemCheck {
         logInState=state;
     }
     public static void setAccountNumber(String accNum){accountNumber=accNum;}
+
+
     /**
      * <p>Check account number</p>
      * <p>Check whether account number is 1:Only composed of numbers and letters
@@ -210,7 +212,7 @@ public class GymSystemCheck {
      * <p>sort the schedule information</p>
      * <p>sort schedule information by time from farthest to most recent
      * </p>
-     * @param inputSchedule ArrayList<String> the array of schedule information
+     * @param inputSchedule ArrayList the array of schedule information
      * @return the sorted information
      * @author Yongfan Jin
      * @version 1.0

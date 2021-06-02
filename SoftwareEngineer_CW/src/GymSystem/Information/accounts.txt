@@ -10,10 +10,11 @@ member4/111111/member4/12576711550/man/member
 member5/111111/member5/12332112311/man/member
 member6/111111/member6/12576711550/man/member
 member7/111111/member7/12332112311/man/member
-member8/111111/member8/12576711550/man/member
+member8/111111/member8/12576711550/man/platinum
 premier1/111111/premier1/12332112311/man/premier
 premier2/111111/premier2/12576711550/man/premier
 platinum1/111111/platinum1/12576711550/man/platinum
 platinum2/111111/platinum2/12332112311/man/platinum
 platinum3/111111/platinum3/12576711550/man/platinum
 trainer03/111111/ycbsh/11111111111/man/trainer
+charles/111111/CHARLES/11122223333/man/platinum

@@ -6,3 +6,5 @@ platinum1/200/platinum
 platinum2/200/platinum
 platinum3/200/platinummember1/150/premier
 member1/200/platinum
+member8/200/platinum
+charles/200/platinum

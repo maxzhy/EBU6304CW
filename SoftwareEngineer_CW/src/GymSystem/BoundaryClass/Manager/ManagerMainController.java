@@ -71,6 +71,28 @@ public class ManagerMainController {
     }
 
     /**
+     * <p>jump to manager's upload video page</p>
+     * <p>Call {@link JumpTo#toManagerUploadVideo(Scene)} (Scene)} method in {@code JumptTo} class to jump to manager's upload video page
+     * </p>
+     * @author Zhaoyang Ma
+     * @version 1.0
+     */
+    public void toManagerUploadVideo() throws IOException {
+        jump.toManagerUploadVideo(signOut.getScene());
+    }
+    /**
+     * <p>jump to manager's watch video page</p>
+     * <p>Call {@link JumpTo#toManagerWatchVideo(Scene)} (Scene)} method in {@code JumptTo} class to jump to manager's watch video page
+     * </p>
+     * @author Zhaoyang Ma
+     * @version 2.0
+     */
+    public void toManagerWatchVideo() throws IOException {
+        jump.toManagerWatchVideo(signOut.getScene());
+    }
+
+
+    /**
      * <p>jump to manager's manage account page</p>
      * <p>Call {@link JumpTo#toManagerAccount(Scene)} method in {@code JumptTo} class to jump to manager's manage account page
      * </p>

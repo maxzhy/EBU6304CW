@@ -110,4 +110,15 @@ public class TrainerClassController {
         jump.toTrainerSchedule(signOut.getScene());
     }
 
+    /**
+     * <p>jump to trainer's watch video page</p>
+     * <p>Call {@link JumpTo#toTrainerWatchVideo(Scene)} (Scene)} (Scene)} method in {@code JumptTo} class to jump to trainer's watch video page
+     * </p>
+     * @author Zhaoyang Ma
+     * @version 2.0
+     */
+    public void toTrainerWatchVideo()throws IOException{
+        jump.toTrainerWatchVideo(username.getScene());
+    }
+
 }

@@ -146,10 +146,8 @@ public class MemberInformationController {
      * {@link GymSystemCheck#checkUsername(String)} to decide whether
      * it is legal, if so, show a green "√", if not, show a red "X"
      * </p>
-     * @param
-     * @return
-     * @author
-     * @version
+     * @author Zhaoyang Ma
+     * @version 1.0
      */
     public void checkUsername() {
         if(GymSystemCheck.checkUsername(editUsername.getText())) {
@@ -332,5 +330,16 @@ public class MemberInformationController {
         GymSystemCheck.setAccountNumber(null);
         GymSystemCheck.setLogInState("not");
         jump.toMain(signOut.getScene());
+    }
+
+    /**
+     * <p>jump to member's watch video page</p>
+     * <p>Call {@link JumpTo#toMemberWatchVideo(Scene)} (Scene)} (Scene)} method in {@code JumptTo} class to jump to member's watch video page
+     * </p>
+     * @author Zhaoyang Ma
+     * @version 2.0
+     */
+    public void toMemberWatchVideo() throws IOException{
+        jump.toMemberWatchVideo(username.getScene());
     }
 }

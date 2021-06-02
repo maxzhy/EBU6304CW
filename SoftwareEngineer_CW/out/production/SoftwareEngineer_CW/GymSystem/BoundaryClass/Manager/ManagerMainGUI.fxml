@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Shadow?>
@@ -9,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane focusTraversable="true" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Manager.ManagerMainController">
+<AnchorPane focusTraversable="true" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.Manager.ManagerMainController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="956.0" layoutY="1.0">
+      <ImageView fitHeight="640.0" fitWidth="976.0">
          <image>
             <Image url="@../../images/background.jpeg" />
          </image>
@@ -29,7 +35,7 @@
             <Font name="Century751 BT Italic" size="64.0" />
          </font>
       </Text>
-      <AnchorPane layoutY="288.0" prefHeight="313.0" prefWidth="1014.0" style="-fx-background-color: #000000; -fx-opacity: 0.5;" />
+      <AnchorPane layoutY="288.0" prefHeight="352.0" prefWidth="1014.0" style="-fx-background-color: #000000; -fx-opacity: 0.5;" />
       <AnchorPane layoutX="450.0" prefHeight="60.0" prefWidth="450.0">
          <children>
             <Label fx:id="signOut" layoutX="224.0" layoutY="21.0" onMouseClicked="#signOut" style="-fx-opacity: 1;" text="Sign out">
@@ -37,13 +43,13 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="96.0" layoutY="21.0" text="Video">
+            <Label fx:id="video" layoutX="96.0" layoutY="21.0" onMouseClicked="#toManagerWatchVideo" text="Video">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
             <TextField focusTraversable="false" layoutX="301.0" layoutY="17.0" prefHeight="32.0" prefWidth="130.0" style="-fx-background-radius: 30px;" />
-            <Label layoutX="172.0" layoutY="21.0" text="Live">
+            <Label disable="true" layoutX="172.0" layoutY="21.0" text="Live">
                <font>
                   <Font size="18.0" />
                </font>
@@ -77,12 +83,12 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="21.0" layoutY="219.0" text="XXXXXXX" textFill="WHITE">
+            <Label fx:id="toManagerUploadVideo" layoutX="21.0" layoutY="219.0" onMouseClicked="#toManagerUploadVideo" text="Upload Video" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="21.0" layoutY="259.0" text="XXXXXXX" textFill="WHITE">
+            <Label fx:id="toManagerWatchVideo" layoutX="21.0" layoutY="259.0" onMouseClicked="#toManagerWatchVideo" text="Watch Video" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

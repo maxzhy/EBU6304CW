@@ -100,6 +100,17 @@ public class MemberUpgradeController {
     }
 
     /**
+     * <p>jump to member's watch video page</p>
+     * <p>Call {@link JumpTo#toMemberWatchVideo(Scene)} (Scene)} (Scene)} method in {@code JumptTo} class to jump to member's watch video page
+     * </p>
+     * @author Zhaoyang Ma
+     * @version 2.0
+     */
+    public void toMemberWatchVideo() throws IOException{
+        jump.toMemberWatchVideo(username.getScene());
+    }
+
+    /**
      * <p>jump to home page</p>
      * <p>Call {@link JumpTo#toMain(Scene)} method in {@code JumptTo} class to jump to home page, and sign out.
      * </p>

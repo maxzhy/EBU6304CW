@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GymSystem.BoundaryClass.SignUp.SignUpController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="956.0">
+      <ImageView fitHeight="638.0" fitWidth="976.0">
          <image>
             <Image url="@../../images/background.jpeg" />
          </image>
@@ -43,7 +43,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="250.0" layoutY="75.0" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: rgba(0,0,0,0.7); -fx-background-radius: 10;">
+      <AnchorPane layoutX="250.0" layoutY="75.0" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: rgba(0,0,0,0.5); -fx-background-radius: 10;">
          <children>
             <TextField fx:id="accountNum" layoutX="39.0" layoutY="70.0" onKeyTyped="#checkAndShowAccNum" style="-fx-background-radius: 5;" />
             <Label layoutX="43.0" layoutY="45.0" text="Account number" textFill="WHITE">
